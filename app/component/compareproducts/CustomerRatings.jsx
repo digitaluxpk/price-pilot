@@ -82,7 +82,7 @@ const CustomerRatings = () => {
       </Text>
         </Accordion.Control>
         <Accordion.Panel>
-        <Flex w={"100%"} justify={"center"} wrap={"wrap"}>
+        <Flex w={"100%"} justify={"center"} style={{overflow:"scroll"}}>
         {reviews.map((item) => {
           return (
             <Flex

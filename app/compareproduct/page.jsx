@@ -4,7 +4,7 @@ import CompareProduct from '../pages/CompareProduct';
 
 const page = () => {
   return (
-   <Box mx={40}>
+   <Box mx={{xs:10,lg:40}}>
     <CompareProduct />
     </Box>
   )

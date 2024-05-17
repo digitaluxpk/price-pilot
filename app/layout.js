@@ -7,6 +7,7 @@ import '@mantine/notifications/styles.css';
 import { Notifications } from '@mantine/notifications';
 import { theme } from "../theme";
 import Navbar from "./component/navbar/Navbar";
+import Footer from "./component/footer/Footer";
 
 export const metadata = {
   title: "Price Pilot",
@@ -29,6 +30,7 @@ export default function RootLayout({ children }) {
           <Navbar />
           <Notifications position="top-right" zIndex={1000} />
           {children}
+          <Footer />
         </MantineProvider>
       </body>
     </html>

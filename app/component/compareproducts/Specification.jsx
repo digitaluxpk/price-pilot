@@ -1,8 +1,6 @@
 "use client";
 
 import { Accordion, Box, Checkbox, Flex, Table, Text, rem } from '@mantine/core';
-import { IconPrinter } from '@tabler/icons-react';
-
 const elements = [
     { position: "value1", mass: "value2", symbol: 'value3' },
     { position: "value", mass: "value", symbol: 'value' },
@@ -24,13 +22,14 @@ const Specification = () => {
         <Accordion.Control >
           <Text fz={20} fw={700}>All Specifications</Text>
         </Accordion.Control>
-        <Accordion.Panel>
-            <Flex gap={8} justify={"space-between"}>
+        <Accordion.Panel >
+            <Flex direction={{xs:"column",md:"row"}} gap={8} justify={"space-between"}>
                 <Checkbox label={"Highlight differences"} color='blue' />
                 <Text fz={12} c={"#1D1D1D"}>A dash (—) means that this information is missing.</Text>
             </Flex>
     <Text my={24} fz={14} fw={700}>Header</Text>
-        <Table fz={14} w={700}>
+        <Box w={"100%"} style={{overflow:"scroll"}}>
+        <Table fz={14} w={700}style={{overflow:"scroll"}}>
       <Table.Thead>
         <Table.Tr>
           <Table.Th>Specifications</Table.Th>
@@ -40,6 +39,7 @@ const Specification = () => {
       </Table.Thead>
       <Table.Tbody>{rows}</Table.Tbody>
     </Table>
+        </Box>
         </Accordion.Panel>
       </Accordion.Item>
      
