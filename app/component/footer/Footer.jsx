@@ -1,7 +1,6 @@
 "use client";
 
-import { Container, Text, Group, Anchor, Divider, Image, Box, Flex } from '@mantine/core';
-import { IconBrandFacebook, IconBrandTwitter, IconBrandInstagram } from '@tabler/icons-react';
+import {  Text, Group, Divider, Image, Box, Flex } from '@mantine/core';
 
 const Footer = () => {
   return (
@@ -20,7 +19,7 @@ const Footer = () => {
           </Box>
           <Flex gap={24}>
           <Box >
-            <Text  weight={700} mb="xs">
+            <Text  fw={700} mb="xs">
               Categories
             </Text>
             <Text>Cat 1</Text>
@@ -29,7 +28,7 @@ const Footer = () => {
             <Text>Cat 1</Text>
           </Box>
           <Box ml={54}>
-            <Text size="sm" weight={700} mb="xs">
+            <Text size="sm" fw={700} mb="xs">
               Company
             </Text>
             <Text>Blog</Text>
