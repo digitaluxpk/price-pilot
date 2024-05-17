@@ -64,7 +64,7 @@ const weOffer = [
   },
   {
     id: 3,
-    logo: "/images/search.png",
+    logo: "/images/dollar.png",
     title: (
       <Text fw={700} w={226}>
         {" "}
