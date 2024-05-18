@@ -25,13 +25,13 @@ export default function CompareProductCard({productList,setProductList}) {
   return (
     <Flex  gap={16} style={{overflow:"scroll"}}>
     {productList&& productList.length > 0 ? productList.map((product) => (
-        <Box w={{xs:140,lg:300}}>
+        <Box w={{xs:140,lg:300}} key={product.id}>
           <Flex w={"100%"} justify={"flex-end"}>
             <Button variant="subtle" onClick={() => handleRemove(product.id)} >
             <IconX size={16} />
           </Button>
           </Flex>
-      <Card key={product.id} shadow="sm" padding="lg" radius="md" withBorder w={"100%"}>
+      <Card  shadow="sm" padding="lg" radius="md" withBorder w={"100%"}>
         <Card.Section>
           <Image src={product.image} height={160} alt={product.name} />
         </Card.Section>
