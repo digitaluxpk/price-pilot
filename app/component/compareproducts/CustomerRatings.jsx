@@ -86,7 +86,6 @@ const CustomerRatings = () => {
         {reviews.map((item) => {
           return (
             <Flex
-            key={item.id}
               mt={40}
               direction={"column"}
               gap={8}
