@@ -106,6 +106,7 @@ const Reviews = () => {
         </Card>
       ))}
         </Box>
+        <Button variant='transparent' bg={"#0034EC"} p={16} radius={8} c={"#fff"}></Button>
     </Box>
   )
 }

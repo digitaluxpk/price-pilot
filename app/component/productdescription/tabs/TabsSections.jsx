@@ -3,6 +3,8 @@ import { Box,Tabs, rem } from '@mantine/core'
 import React from 'react'
 import Prices from './Prices'
 import Reviews from './Reviews'
+import Overview from './Overview'
+import Specifications from './Specifications'
 
 const TabsSections = () => {
   return (
@@ -15,12 +17,13 @@ const TabsSections = () => {
         <Tabs.Tab value="reviews" >
         Reviews
         </Tabs.Tab>
-        <Tabs.Tab value="product">
+        <Tabs.Tab value="overview">
         Product Overview
         </Tabs.Tab>
         <Tabs.Tab value="specifications" >
         Specifications
         </Tabs.Tab>
+        
       </Tabs.List>
 
       <Tabs.Panel value="prices">
@@ -31,8 +34,11 @@ const TabsSections = () => {
         <Reviews />
       </Tabs.Panel>
 
-      <Tabs.Panel value="settings">
-        Settings tab content
+      <Tabs.Panel value="overview">
+        <Overview />
+      </Tabs.Panel>
+      <Tabs.Panel value="specifications">
+        <Specifications />
       </Tabs.Panel>
     </Tabs>
     </Box>
