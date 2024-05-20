@@ -27,7 +27,7 @@ const MobileCategoryCard = () => {
 {
     categories.map((category) =>{
         return(
-            <Flex component={Link} href={"/mobilesubcategory"} c={"#000"} w={"100%"} justify={"space-between"} align={"center"} gap={12}>
+            <Flex key={category.id} component={Link} href={"/mobilesubcategory"} c={"#000"} w={"100%"} justify={"space-between"} align={"center"} gap={12}>
                 <Image src={category.image} width={90} height={50} radius="md" alt="Category" />
                 <Text fw={700} fz={14} >{category.title}</Text>
                 <IconChevronRight color='#0034EC' stroke={1.5} />
