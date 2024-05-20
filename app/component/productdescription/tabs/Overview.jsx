@@ -32,7 +32,7 @@ const Overview = () => {
         immersive audio. Access live over-the-air channels and streaming—and
         control it all with your voice. Ask Alexa to launch apps, search for
         titles and more. Experience the affordable, yet high-performing Insignia
-        NS-55F301NA22 55" Class F30 Series LED 4K UHD Fire TV.
+        NS-55F301NA22 55 Class F30 Series LED 4K UHD Fire TV.
       </Text>
       <List mt={24}  fz={14}>
     <List.Item>Low Price Guarantee</List.Item>
