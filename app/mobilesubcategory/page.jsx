@@ -1,6 +1,7 @@
 import { Box, Flex, Image, Text } from '@mantine/core';
 import React from 'react'
 import Breadcrumb from '../component/BreadCrumbs';
+import Link from 'next/link';
 
 const MobileSubcategory = () => {
    const items = [
@@ -12,7 +13,7 @@ const MobileSubcategory = () => {
   return (
     <Flex px={12} c={"#000"} direction={"column"}  mt={32} wrap={"wrap"} gap={24}>
        <Breadcrumb />
-        <Box   className="category">
+        <Box component={Link} href={"/category/subcategory"} c={"#000"} style={{textDecoration:"none"}}  className="category">
           <Text my={24} fz={24} fw={700}>Smart Speakers & Displays</Text>
             <Image src={"/images/category.png"} />
           <Flex direction={"column"} mt={12} gap={12}>

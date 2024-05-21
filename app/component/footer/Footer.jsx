@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <Box mx={{ xs: 10, md: 40 }} py={{ xs: 40, md: 80 }}>
+    <Box mx={{ xs: 16, md: 40 }} py={{ xs: 40, md: 80 }}>
       <Divider size="xs" my={24} />
       <Box component={Link} href={"/"}>
         <Image
