@@ -1,10 +1,11 @@
 import { Box } from '@mantine/core'
 import React from 'react'
 import Main from "../component/category/Main"
+import Category from '../pages/Category'
 const page = () => {
   return (
    <Box px={40}>
-    <Main />
+    <Category />
    </Box>
   )
 }

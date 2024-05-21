@@ -1,80 +1,10 @@
+import { searchOptions, weOffer } from "@/Constants";
 import { Box, Button, Flex, Image, Text, TextInput } from "@mantine/core";
 import { IconEyeSearch, IconSearch } from "@tabler/icons-react";
 import React from "react";
 
-const searchOptions = [
-  {
-    id: 1,
-    img: "/images/speakers.png",
-    name: "Smart Speakers & Displays",
-  },
-  {
-    id: 2,
-    img: "/images/smart.png",
-    name: "Smart Lighting",
-  },
-  {
-    id: 3,
-    img: "/images/monitor.png",
-    name: "Smart Speakers & Displays",
-  },
-  {
-    id: 4,
-    img: "/images/tablet-smartphone.png",
-    name: "Smart Plugs & Outlets",
-  },
-  {
-    id: 5,
-    img: "/images/doorbell.png",
-    name: "Smart Doorbells",
-  },
-  {
-    id: 6,
-    img: "/images/doorlocks.png",
-    name: "Smart Doorlocks",
-  },
-  {
-    id: 7,
-    img: "/images/monitor.png",
-    name: "Routers",
-  },
-];
-const weOffer = [
-  {
-    id: 1,
-    logo: "/images/search.png",
-    title: (
-      <Text fw={700} w={226}>
-        {" "}
-        <span style={{ color: "#0034EC" }}> Search</span> and{" "}
-        <span style={{ color: "#0034EC" }}> discover</span> the latest products.
-      </Text>
-    ),
-  },
-  {
-    id: 2,
-    logo: "/images/combine.png",
-    title: (
-      <Text fw={700} w={226}>
-        {" "}
-        <span style={{ color: "#0034EC" }}> Compare</span> and{" "}
-        <span style={{ color: "#0034EC" }}> find</span> products that you need.
-      </Text>
-    ),
-  },
-  {
-    id: 3,
-    logo: "/images/dollar.png",
-    title: (
-      <Text fw={700} w={226}>
-        {" "}
-        <span style={{ color: "#0034EC" }}> Find</span> the{" "}
-        <span style={{ color: "#0034EC" }}> best deals</span> from trusted
-        retailers in the US.
-      </Text>
-    ),
-  },
-];
+
+
 
 const LandingPage = () => {
   return (
