@@ -1,5 +1,4 @@
 "use client";
-import { useState } from "react";
 import {
   TextInput,
   Box,
@@ -10,11 +9,9 @@ import {
   Button,
   Menu,
   Drawer,
-  Group,
 } from "@mantine/core";
 import {
   IconChevronDown,
-  IconEyeSearch,
   IconSearch,
 } from "@tabler/icons-react";
 import { useDisclosure } from "@mantine/hooks";
@@ -50,7 +47,8 @@ function Navbar() {
       px={32}
     >
       <Flex align={"center"}>
-        <Box>
+        <Box component={Link}
+      href={"/"}>
           <Image src={"/images/logo.png"} w={192} h={33} />
         </Box>
         {pathname !== "/" && (
@@ -62,16 +60,16 @@ function Navbar() {
                 </Button>
               </Menu.Target>
               <Menu.Dropdown>
-                <Menu.Item component="a" href="/category-1">
+                <Menu.Item component={Link} href="/category">
                   Category 1
                 </Menu.Item>
-                <Menu.Item component="a" href="/category-2">
+                <Menu.Item component={Link} href="/category">
                   Category 2
                 </Menu.Item>
-                <Menu.Item component="a" href="/category-3">
+                <Menu.Item component={Link} href="/category">
                   Category 3
                 </Menu.Item>
-                <Menu.Item component="a" href="/category-4">
+                <Menu.Item component={Link} href="/category">
                   Category 4
                 </Menu.Item>
               </Menu.Dropdown>
