@@ -144,3 +144,10 @@ export const categoryCard = [
     ]
   }
 ];
+
+export  const mobileSubCategoryList = [
+  { id: "smart-plugs", name: "Smart Plugs" },
+  { id: "smart-power-strips", name: "Smart Power Strips" },
+  { id: "smart-usb-outlets", name: "Smart & USB Outlets" },
+  { id: "smart-light-switches-dimmers-plugs", name: "Smart Light Switches & Dimmers" }
+]

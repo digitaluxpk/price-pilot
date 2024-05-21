@@ -1,7 +1,7 @@
 "use client";
 import { Box, Button, Flex, Popover, Text } from "@mantine/core";
 import CategoryCard from "../component/subcategory/ProductCard";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import BreadCrumb from "../component/BreadCrumbs";
 import SideBar from "../component/subcategory/SideBar";
 import { IconChevronDown, IconSortAscending2 } from "@tabler/icons-react";
@@ -9,12 +9,27 @@ import { useDisclosure } from "@mantine/hooks";
 import MobileFilter from "../component/subcategory/MobileFilters";
 const SubCategory = () => {
   const [sortOption, setSortOption] = useState("Best Match");
+  const [stickyFilter, setStickyFilter] = useState(false);
   const [opened, setOpened] = useState(false);
   const handleSortChange = (value) => {
     setSortOption(value);
     setOpened(false);
   };
-  const [openedFilterModal,handleFilterModal] = useDisclosure();
+  const [openedFilterModal, handleFilterModal] = useDisclosure();
+  const handleScroll = () => {
+    if (window.scrollY > 100) {
+      setStickyFilter(true);
+    } else {
+      setStickyFilter(false);
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <Flex direction={"column"}>
       <BreadCrumb />
@@ -24,7 +39,15 @@ const SubCategory = () => {
       <Flex mt={40} gap={32} justify={"space-between"}>
         <SideBar />
         <Box>
-          <Flex mb={26} justify={"space-between"} w={"100%"}>
+          <Flex
+            pos={stickyFilter ? "fixed" : "static"}
+            top={68}
+            py={10}
+            mb={26}
+            bg={"#fff"}
+            justify={"space-between"}
+            w={"90%"}
+          >
             <Text fz={14} fw={600}>
               21,564 results
             </Text>
@@ -34,6 +57,7 @@ const SubCategory = () => {
               c={"#000"}
               variant="transparent"
               onClick={handleFilterModal.open}
+              display={{ xs: "block", lg: "none" }}
             >
               <IconSortAscending2 /> Sort & Filters
             </Button>
@@ -99,7 +123,10 @@ const SubCategory = () => {
           <Text fw={700}>Ads</Text>
         </Flex>
       </Flex>
-      <MobileFilter opened={openedFilterModal} onClose={handleFilterModal.close} />
+      <MobileFilter
+        opened={openedFilterModal}
+        onClose={handleFilterModal.close}
+      />
     </Flex>
   );
 };
