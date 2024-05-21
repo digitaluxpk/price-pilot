@@ -98,7 +98,7 @@ const Reviews = () => {
             <Rating value={review.rating} readOnly />
           </Group>
           <Text weight={700} size="lg" mt="sm">{review.title}</Text>
-          <Text size="sm" color="dimmed" mt="xs">
+          <Text size="sm" mt="xs">
             Reviewed by {review.reviewer} on {review.date} {review.verified && '- Verified Purchase'}
           </Text>
           <Text mt="md">{review.content}</Text>

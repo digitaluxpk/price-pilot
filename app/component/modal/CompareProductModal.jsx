@@ -73,10 +73,10 @@ const CompareProductModal = ({opened,onClose}) => {
         position="bottom"
       >
         <Box>
-        <Group position="right" mt="lg">
-        <Button variant="transparent" c={"#000"} onClick={() => removeFromCompare(null)}>Clear All</Button>
-        <Button color="blue">Compare</Button>
-      </Group>
+        <Flex gap={12} w={"100%"} justify={"flex-end"} my={16} display={{xs:"none",md:"flex"}} position="right" mt="lg">
+        <Button variant="transparent" style={{border:"1px solid #0034EC"}} c={"#0034EC"} onClick={() => removeFromCompare(null)}>Clear All</Button>
+        <Button color="blue" >Compare</Button>
+      </Flex>
           <Flex wrap="wrap" gap="md" align="center">
             {compareProducts.map((product, index) => (
               <Box
@@ -106,7 +106,15 @@ const CompareProductModal = ({opened,onClose}) => {
               </Flex>
             ))}
           </Flex>
-         
+          <Box mt={24} display={{xs:"block",md:"none"}}>
+
+         <Button w={"100%"}>
+           Compare
+         </Button>
+            <Button mt={16} w={"100%"} variant='transparent' style={{border:"1px solid #0034EC"}}>
+              Clear all
+            </Button>
+          </Box>
         </Box>
       </Drawer>
 

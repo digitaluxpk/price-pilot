@@ -33,20 +33,22 @@ const Hero = () => {
 
   return (
     <Flex w={"100%"}>
-      <Flex direction={{xs:"column",lg:"row"}} >
+      <Flex direction={{xs:"column",lg:"row"}} gap={24} >
         <Box  span={6}>
         <Text display={{xs:"block",lg:"none"}} mb={20} fz={16} fw={700}>{product.name}</Text>
 
-          <Image src={selectedImage} alt={product.name} />
-          <Group mt="md" spacing="xs">
+         <Flex gap={12} direction={"column"} align={"center"}>
+         <Image w={{xs:300,lg:380}} src={selectedImage} alt={product.name} />
+          <Flex className='hide-scrollbar' w={350} gap={12} style={{overflow:"scroll"}} mt="md" spacing="xs">
             {product.images.map((image, index) => (
               <Box key={index} onClick={() => setSelectedImage(image)} sx={{ cursor: 'pointer', border: selectedImage === image ? '2px solid black' : 'none' }}>
-                <Image src={image} width={70} height={70} alt={`Product Image ${index + 1}`} />
+                <Image src={image} w={70} height={70} alt={`Product Image ${index + 1}`} />
               </Box>
             ))}
-          </Group>
+          </Flex>
+         </Flex>
         </Box>
-        <Box span={6}>
+        <Box  span={6}>
           <Text display={{xs:"none",lg:"block"}} size="lg" weight={700}>{product.name}</Text>
           <Group mt="sm" align="center">
             <Badge color={product.inStock ? 'green' : 'red'}>

@@ -102,7 +102,7 @@ const Prices = () => {
               </Popover.Dropdown>
             </Popover>
         </Flex>
-      <Table>
+      <Table >
         <Table.Thead>
           <Table.Tr>
             <Table.Th>Sold by</Table.Th>
@@ -112,7 +112,7 @@ const Prices = () => {
             <Table.Th></Table.Th>
           </Table.Tr>
         </Table.Thead>
-        <Table.Tbody>{rows}</Table.Tbody>
+        <Table.Tbody >{rows}</Table.Tbody>
       </Table>
     </Box>
   );
