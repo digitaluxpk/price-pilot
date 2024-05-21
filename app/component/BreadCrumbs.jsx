@@ -9,10 +9,10 @@ export default function Breadcrumb() {
     const pathNames = ['Home', ...paths.split('/').filter(path => path)];
     const items = pathNames.map((item, index) => {
         const itemName = item.charAt(0).toUpperCase() + item.slice(1);
-        const textStyle = index === pathNames.length - 1 ? { color: 'blue' } : {color: '#000'};
+        const textStyle = index === pathNames.length - 1 ? { color: 'blue',textDecoration:"none" } : {color: '#000',textDecoration:"none"};
 
         return (
-          <Box component={Link} style={{textDecoration:"none"}} href={`/${item}`} key={index}>
+          <Box component={Link} style={{textDecoration:"none"}}  href={`/${item}`} key={index}>
             <Text style={textStyle}>{itemName}</Text>
           </Box>
         );

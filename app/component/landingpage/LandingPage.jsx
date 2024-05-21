@@ -1,6 +1,7 @@
 import { searchOptions, weOffer } from "@/Constants";
 import { Box, Button, Flex, Image, Text, TextInput } from "@mantine/core";
 import { IconEyeSearch, IconSearch } from "@tabler/icons-react";
+import Link from "next/link";
 import React from "react";
 
 
@@ -37,7 +38,7 @@ const LandingPage = () => {
           rightSectionWidth={42}
         />
       </Flex>
-      <Flex w={{sm:"100%",lg:790}} wrap={"wrap"} justify={"center"} gap={12} mt={32}>
+      <Flex align={"center"} w={{sm:"100%",lg:790}} wrap={"wrap"} justify={"center"} gap={12} mt={32}>
         {searchOptions.map((item) => {
           return (
             <Flex
@@ -46,9 +47,13 @@ const LandingPage = () => {
               direction={"column"}
               justify={"center"}
               align={"center"}
+              w={160}
+              component={Link}
+              href={"/category"}
+              style={{textDecoration:"none"}}
             >
-              <Image src={item.img} alt="sadf" w={24} h={24} />
-              <Text fw={500}>{item.name}</Text>
+              <Image src={item.img} alt="sadf" w={32} h={32} />
+              <Text ta={"center"} c={"#000"}  fw={500}>{item.name}</Text>
             </Flex>
           );
         })}
@@ -56,7 +61,9 @@ const LandingPage = () => {
       <Flex mt={121} gap={54} wrap={"wrap"} justify={"center"}>
         {weOffer.map((items) => {
           return (
-            <Flex key={items.id} gap={16}>
+            <Flex key={items.id} gap={16} component={Link} href={"/category"} 
+            style={{textDecoration:"none"}} c={"#000"}
+            >
               <Image src={items.logo} alt="sadf" w={32} h={32} />
               <Box>{items.title}</Box>
             </Flex>
