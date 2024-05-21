@@ -1,5 +1,6 @@
 "use client"
-import { Breadcrumbs, Anchor, Text } from '@mantine/core';
+import { Breadcrumbs, Anchor, Text, Box } from '@mantine/core';
+import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 
@@ -11,9 +12,9 @@ export default function Breadcrumb() {
         const textStyle = index === pathNames.length - 1 ? { color: 'blue' } : {color: '#000'};
 
         return (
-          <Anchor href={`/${item}`} key={index}>
+          <Box component={Link} style={{textDecoration:"none"}} href={`/${item}`} key={index}>
             <Text style={textStyle}>{itemName}</Text>
-          </Anchor>
+          </Box>
         );
     });
   return (
