@@ -40,7 +40,7 @@ const SubCategory = () => {
         <SideBar />
         <Box>
           <Flex
-            pos={stickyFilter ? "fixed" : "static"}
+            pos={{xs:stickyFilter ? "fixed" : "static",lg:"static"}}
             top={68}
             py={10}
             mb={26}
