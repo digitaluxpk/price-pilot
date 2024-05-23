@@ -1,6 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { ColorSchemeScript, MantineProvider } from "@mantine/core";
+import { ColorSchemeScript, Flex, MantineProvider } from "@mantine/core";
 import Head from "next/head";
 import '@mantine/core/styles.css';
 import '@mantine/notifications/styles.css';
@@ -28,10 +28,14 @@ export default function RootLayout({ children }) {
       <body>
           <ColorSchemeScript defaultColorScheme="light" />
         <MantineProvider theme={theme}  >
+          <Flex w={"100%"}  justify={"center"}>
+          <Flex direction={"column"} bg={"#fff"} w={{xs:"!00%",xl:"1440px"}}>
           <Navbar />
           <Notifications position="top-right" zIndex={1000} />
           {children}
           <Footer />
+          </Flex>
+          </Flex>
         </MantineProvider>
       </body>
     </html>
