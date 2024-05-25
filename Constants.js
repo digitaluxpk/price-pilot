@@ -78,7 +78,7 @@ export const weOffer = [
     id: 1,
     logo: "/images/search.png",
     title: (
-      <Text fw={700} w={226}>
+      <Text fw={{sm:700,lg:500}} w={226}>
         {" "}
         <span style={{ color: "#0034EC" }}> Search</span> and{" "}
         <span style={{ color: "#0034EC" }}> discover</span> the latest products.

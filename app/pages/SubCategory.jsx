@@ -33,7 +33,7 @@ const SubCategory = () => {
   return (
     <Flex direction={"column"}>
       <BreadCrumb />
-      <Text mt={34} fz={24} fw={700}>
+      <Text mt={34} fz={{sm:24,lg:32}} fw={600}>
         Smart Speakers & Displays
       </Text>
       <Flex mt={40} gap={32} justify={"space-between"}>
@@ -57,6 +57,7 @@ const SubCategory = () => {
               c={"#000"}
               variant="transparent"
               onClick={handleFilterModal.open}
+              fz={400}
               display={{ xs: "block", lg: "none" }}
             >
               <IconSortAscending2 /> Sort & Filters

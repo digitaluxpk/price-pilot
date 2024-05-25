@@ -22,7 +22,6 @@ function Sidebar() {
 
   const [search, setSearch] = useState('');
   const [checkedItems, setCheckedItems] = useState([]);
-  console.log("🚀 ~ Sidebar ~ checkedItems:", checkedItems)
   
   const brandss = [
     'Amazon',
@@ -71,11 +70,13 @@ function Sidebar() {
 
       <Accordion defaultValue="categories" w={400}>
         <Accordion.Item value="categories">
-          <Accordion.Control>Category</Accordion.Control>
+          <Accordion.Control fz={12}>Category</Accordion.Control>
           <Accordion.Panel>
             {Object.keys(categories).map((category) => (
               <Checkbox
               my={12}
+              fz={14}
+              fw={500}
                 key={category}
                 label={category}
                 checked={categories[category]}
@@ -86,10 +87,11 @@ function Sidebar() {
         </Accordion.Item>
 
         <Accordion.Item value="price">
-          <Accordion.Control>Price</Accordion.Control>
+          <Accordion.Control fz={12}>Price</Accordion.Control>
           <Accordion.Panel>
             <Group grow>
               <NumberInput
+                fz={14}
                 value={priceRange[0]}
                 onChange={(value) => handlePriceChange([value, priceRange[1]])}
                 placeholder="Min price"
@@ -97,6 +99,7 @@ function Sidebar() {
                 max={1000}
               />
               <NumberInput
+              fz={14}
                 value={priceRange[1]}
                 onChange={(value) => handlePriceChange([priceRange[0], value])}
                 placeholder="Max price"
@@ -117,7 +120,7 @@ function Sidebar() {
           </Accordion.Panel>
         </Accordion.Item>
         <Accordion.Item value="brands">
-          <Accordion.Control>Brands</Accordion.Control>
+          <Accordion.Control fz={12}>Brands</Accordion.Control>
           <Accordion.Panel>
             <TextInput
               placeholder="Find Brand"
@@ -132,7 +135,8 @@ function Sidebar() {
               {filteredBrands.map((brand) => (
                 <Checkbox
                 color='blue'
-               
+                  fz={14}
+                  fw={500}
                   key={brand}
                   label={brand}
                   checked={checkedItems.includes(brand)}

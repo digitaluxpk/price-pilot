@@ -17,7 +17,7 @@ const CategoryCard = () => {
           <Text my={18} fz={18} fw={700}>{category.title}</Text>
           <Flex direction={"column"} gap={18}>
             {category.items.map(item => (
-              <Text key={item.id}>{item.name}</Text>
+              <Text fw={item.id == 1 ? 600:500} key={item.id}>{item.name}</Text>
             ))}
           </Flex>
         </Box>

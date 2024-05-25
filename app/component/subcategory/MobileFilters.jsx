@@ -55,6 +55,8 @@ const FilterModal = ({ opened, onClose }) => {
         content: <Box>
             {Object.keys(categories).map((category) => (
               <Checkbox
+              fz={14}
+              fw={500}
               color='blue'
               my={12}
                 key={category}
@@ -70,6 +72,8 @@ const FilterModal = ({ opened, onClose }) => {
         content: <Box>
             <Group grow>
                   <NumberInput
+                  fz={14}
+                  fw={500}
                     value={priceRange[0]}
                     onChange={(value) => handlePriceChange([value, priceRange[1]])}
                     placeholder="Min price"
@@ -77,6 +81,8 @@ const FilterModal = ({ opened, onClose }) => {
                     max={1000}
                   />
                   <NumberInput
+                  fz={14}
+                  fw={500}
                     value={priceRange[1]}
                     onChange={(value) => handlePriceChange([priceRange[0], value])}
                     placeholder="Max price"
@@ -167,15 +173,17 @@ const FilterModal = ({ opened, onClose }) => {
         <Accordion>
           {filteredFilters.map((filter, index) => (
             <Accordion.Item key={index} value={filter.name}>
-              <Accordion.Control>{filter.name}</Accordion.Control>
+              <Accordion.Control fz={14}
+              fw={500}>{filter.name}</Accordion.Control>
               <Accordion.Panel>
-                <Text>{filter.content}</Text>
+                <Text fz={14}
+              fw={500}>{filter.content}</Text>
               </Accordion.Panel>
             </Accordion.Item>
           ))}
         </Accordion>
         <Box mt="lg">
-          <Button fullWidth color="blue">
+          <Button fw={500} fullWidth color="blue">
             View 550 results
           </Button>
         </Box>

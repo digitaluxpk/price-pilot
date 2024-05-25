@@ -49,7 +49,7 @@ const Hero = () => {
          </Flex>
         </Box>
         <Box  span={6}>
-          <Text display={{xs:"none",lg:"block"}} size="lg" weight={700}>{product.name}</Text>
+          <Text display={{xs:"none",lg:"block"}} size={24} weight={600}>{product.name}</Text>
           <Group mt="sm" align="center">
             <Badge color={product.inStock ? 'green' : 'red'}>
               {product.inStock ? (
@@ -64,7 +64,7 @@ const Hero = () => {
                 </Group>
               )}
             </Badge>
-            <Text size="sm">Model: {product.model}</Text>
+            <Text size={12}>Model: {product.model}</Text>
           </Group>
           <Group mt="sm" align="center">
             <Rating value={product.rating} readOnly />
@@ -72,7 +72,7 @@ const Hero = () => {
           </Group>
           <Text size="xl" weight={700} mt="sm">{product.priceRange}</Text>
           <Text size="sm">
-            in <Text component="span" color="blue" inherit>{product.stores} stores</Text>
+            in <Text component="span" c={"blue"} inherit>{product.stores} stores</Text>
           </Text>
           <Text size="md" weight={700} mt="md">Screen Size:</Text>
           <Group spacing="xs" mt="xs">
