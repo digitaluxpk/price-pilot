@@ -9,7 +9,7 @@ const Category = () => {
     <Flex direction={"column"}>
     
       <Breadcrumb />
-        <Text mt={34} fz={24} fw={700}>
+        <Text mt={34} fz={24} fw={600}>
           Smart Home
         </Text>
       <Flex gap={32}>

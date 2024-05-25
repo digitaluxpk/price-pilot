@@ -51,17 +51,17 @@ export default function CategoryCard() {
             ))}
           </Group>
           <ColorOptions colors={product.colors} />
-            <Text fw={700} fz={14}>{product.name}</Text>
+            <Text fw={{sm:700,lg:600}} fz={14}>{product.name}</Text>
           
           <Flex gap={8} my={8} align={"center"}>
           <Rating defaultValue={product.stars} />
           <Text c={"#0034EC"}>({product.totalReviews})</Text>
           </Flex>
-          <Text fw={500}>
+          <Text fw={600}>
               {product.price}
             </Text>
-            <Text fz={12} mt={8}>
-            Option: <span style={{fontWeight:"700"}}> {product.description}</span>
+            <Text fz={12} fw={500} mt={8}>
+            Option: <span style={{fontWeight:"500"}}> {product.description}</span>
           </Text>
 
           <Checkbox mt={16} label="Comapare" />

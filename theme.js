@@ -2,8 +2,6 @@
 import { createTheme } from "@mantine/core";
 
 export const theme = createTheme({
-  /* Put your mantine theme override here */
-  fontFamily: "Urbanist, sans-serif",
   primaryColor: "blue",
   fontSmoothing: true,
   breakpoints: {
