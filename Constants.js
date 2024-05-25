@@ -89,7 +89,7 @@ export const weOffer = [
     id: 2,
     logo: "/images/combine.png",
     title: (
-      <Text fw={700} w={226}>
+      <Text fw={{sm:700,lg:500}} w={226}>
         {" "}
         <span style={{ color: "#0034EC" }}> Compare</span> and{" "}
         <span style={{ color: "#0034EC" }}> find</span> products that you need.
@@ -100,7 +100,7 @@ export const weOffer = [
     id: 3,
     logo: "/images/dollar.png",
     title: (
-      <Text fw={700} w={226}>
+      <Text fw={{sm:700,lg:500}} w={226}>
         {" "}
         <span style={{ color: "#0034EC" }}> Find</span> the{" "}
         <span style={{ color: "#0034EC" }}> best deals</span> from trusted
