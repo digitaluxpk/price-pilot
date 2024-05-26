@@ -31,6 +31,13 @@ export default function RootLayout({ children }) {
         <MantineProvider theme={
           {
             ...theme,
+            breakpoints: {
+              xs: '5em',
+              sm: '5em',
+              md: '64em',
+              lg: '74em',
+              xl: '90em',
+            },
             fontFamily: raleway.style.fontFamily,
           }
         }>
