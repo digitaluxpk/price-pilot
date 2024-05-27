@@ -23,7 +23,7 @@ export default function CompareProductCard({productList,setProductList}) {
     setProductList(productList.filter((product) => product.id !== id));
   };
   return (
-    <Flex  gap={16} style={{overflow:"scroll"}}>
+    <Flex  gap={16} wrap={"wrap"} style={{overflow:"scroll"}}>
     {productList&& productList.length > 0 ? productList.map((product) => (
         <Box w={{xs:140,lg:300}} key={product.id}>
           <Flex w={"100%"} justify={"flex-end"}>
