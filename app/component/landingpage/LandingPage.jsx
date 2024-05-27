@@ -1,6 +1,6 @@
 import { searchOptions, weOffer } from "@/Constants";
 import { Box, Button, Flex, Image, Text, TextInput } from "@mantine/core";
-import { IconEyeSearch, IconSearch } from "@tabler/icons-react";
+import { IconSearch } from "@tabler/icons-react";
 import Link from "next/link";
 import React from "react";
 
@@ -11,6 +11,7 @@ const LandingPage = () => {
   return (
     <Flex
       mt={42}
+      mx={12}
       c={"#000"}
       justify={"center"}
       align={"center"}
@@ -19,10 +20,10 @@ const LandingPage = () => {
       <Box>
         <Image src="/images/hero.png" w={320} h={54} />
       </Box>
-      <Text c={"#303030"} fz={{sm:16,lg:20}} fw={{sm:500,lg:400}} mt={20} ta={"center"}>
+      <Text c={"#303030"} fz={{sm:16,lg:20}} fw={{sm:500,lg:400} } mx={12} mt={20} ta={"center"}>
       Find the best prices on Smart Home products online with PricePilot
       </Text>
-      <Flex ml={{md:32}} h={48} w={{sm:382,lg:702}}>
+      <Flex ml={{md:32}} h={48} w={{xs:300,lg:702}}>
         <TextInput
          w={{xs:362,lg:702}}
           h={"100%"}

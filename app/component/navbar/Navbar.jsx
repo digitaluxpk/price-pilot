@@ -55,7 +55,7 @@ function Navbar() {
         align={"center"}
         w={"100%"}
         direction={"row"}
-        display={{ md: "flex", xs: "none" }}
+        display={{ lg: "flex", xs: "none" }}
         justify={"space-between"}
         py={24}
         px={32}
@@ -123,14 +123,17 @@ function Navbar() {
       {/* for mobile */}
       <>
         <Flex
-          display={{ xs: "flex", md: "none" }}
+          display={{ xs: "flex", lg: "none" }}
           justify="space-between"
           align="center"
           p="md"
+          mx={12}
           style={{
             position: stickyNavbar ? "fixed" : "static",
             width:"100%",
             top: 0,
+            left: -10,
+            margin:"0 12px",
             zIndex: 1000,
             backgroundColor: "white",
           }}
@@ -182,7 +185,7 @@ function Navbar() {
           onClose={handleSearchBar.close}
           title={
             <TextInput
-              w={{ xs: 302, lg: 702 }}
+              w={{ xs: 290, lg: 702 }}
               h={"100%"}
               p={12}
               placeholder="Start searching for a product"
