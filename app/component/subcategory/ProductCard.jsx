@@ -2,6 +2,7 @@ import { Image, Text, Badge, Button, Group, Box, useMantineTheme, Rating, Flex, 
 import ColorOptions from './ColorOptions';
 import { useDisclosure } from '@mantine/hooks';
 import CompareProductModal from '../modal/CompareProductModal';
+import Link from 'next/link';
 
 const products = [
   {
@@ -39,9 +40,12 @@ const products = [
 export default function CategoryCard() {
   const [opened,handleModal] = useDisclosure()
   return (
-    <Flex wrap={"wrap"} gap={16}>
+    <Flex wrap={"wrap"} gap={{xs:16,lg:16}}>
       {products.map((product, index) => (
-        <Box key={index} w={{xs:164,md:218}} onClick={handleModal.open} >
+        <Box component={Link} href={"/category/subcategory/productdescription"}
+        style={{ textDecoration:"none"}}
+        c={"#000"}
+        key={index} w={{xs:164,md:218}}  >
           <Box >
             <Image src={product.image} height={160} alt={product.name} />
           </Box>
@@ -64,7 +68,7 @@ export default function CategoryCard() {
             Option: <span style={{fontWeight:"500"}}> {product.description}</span>
           </Text>
 
-          <Checkbox mt={16} label="Comapare" />
+          <Checkbox onClick={handleModal.open} mt={16} label="Comapare" />
         </Box>
       ))}
       <CompareProductModal opened={opened} onClose={handleModal.close} />

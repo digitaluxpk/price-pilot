@@ -5,18 +5,18 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <Box mx={{ xs: 16, md: 40 }} py={{ xs: 40, md: 80 }}>
+    <Flex  direction={"column"} mx={{ xs: 40, md: 40 }} py={{ xs: 40, md: 80 }}>
       <Divider size="xs" my={24} />
       <Box component={Link} href={"/"}>
         <Image
           src="/images/footer-logo.png"
           alt="PricePilot"
           h={51}
-          w={{ xs: 350, md: 390 }}
+          w={{ xs: 300, md: 390 }}
         />
       </Box>
-      <Flex direction={{ xs: "column", md: "row" }} gap={{ xs: 24, lg: 80 }}>
-        <Box w={390}>
+      <Flex  direction={{ xs: "column", md: "row" }} gap={{ xs: 24, lg: 80 }}>
+        <Box w={{xs:300,md:390}}>
           <Text mt={24}>
             PricePilot helps you discover the best products, compare them, and
             then find the best deals.
@@ -57,7 +57,7 @@ const Footer = () => {
           </Text>
         </Group>
       </Flex>
-    </Box>
+    </Flex>
   );
 };
 

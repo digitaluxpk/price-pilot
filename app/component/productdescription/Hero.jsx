@@ -34,12 +34,12 @@ const Hero = () => {
   return (
     <Flex w={"100%"}>
       <Flex direction={{xs:"column",lg:"row"}} gap={24} >
-        <Box  span={6}>
-        <Text display={{xs:"block",lg:"none"}} mb={20} fz={16} fw={700}>{product.name}</Text>
+        <Box  >
+        <Text display={{xs:"block",md:"none"}} mb={20} fz={16} fw={700}>{product.name}</Text>
 
          <Flex gap={12} direction={"column"} align={"center"}>
-         <Image w={{xs:300,lg:380}} src={selectedImage} alt={product.name} />
-          <Flex className='hide-scrollbar' w={350} gap={12} style={{overflow:"scroll"}} mt="md" spacing="xs">
+         <Image w={{xs:300,md:"80%",lg:380}} src={selectedImage} alt={product.name} />
+          <Flex className='hide-scrollbar' w={{xs:320,md:550,lg:350}} gap={12} style={{overflow:"scroll"}} mt="md" spacing="xs">
             {product.images.map((image, index) => (
               <Box key={index} onClick={() => setSelectedImage(image)} sx={{ cursor: 'pointer', border: selectedImage === image ? '2px solid black' : 'none' }}>
                 <Image src={image} w={70} height={70} alt={`Product Image ${index + 1}`} />
@@ -48,33 +48,39 @@ const Hero = () => {
           </Flex>
          </Flex>
         </Box>
-        <Box  span={6}>
-          <Text display={{xs:"none",lg:"block"}} size={24} weight={600}>{product.name}</Text>
+        <Box  >
+          <Text display={{xs:"none",md:"block"}} fz={24} fw={600}>{product.name}</Text>
+          <Flex gap={12} direction={{xs:"column",md:"row",lg:"column"}} align={{xs:"start",md:"center",lg:"start"}}>
           <Group mt="sm" align="center">
             <Badge color={product.inStock ? 'green' : 'red'}>
               {product.inStock ? (
-                <Group spacing={5}>
+                <Group spacing={1}>
                   <IconCheck size={16} />
                   In stock
                 </Group>
               ) : (
-                <Group spacing={5}>
+                <Group spacing={1}>
                   <IconAlertCircle size={16} />
                   Out of stock
                 </Group>
               )}
             </Badge>
-            <Text size={12}>Model: {product.model}</Text>
+            <Text fz={12}>Model: {product.model}</Text>
           </Group>
+          <Flex gap={12} direction={{xs:"column",md:"row",lg:"column"}}>
           <Group mt="sm" align="center">
             <Rating value={product.rating} readOnly />
-            <Text size="sm" color="blue">({product.totalReviews} reviews)</Text>
+            <Text fz="sm" c="blue">({product.totalReviews} reviews)</Text>
           </Group>
-          <Text size="xl" weight={700} mt="sm">{product.priceRange}</Text>
-          <Text size="sm">
+         <Box>
+         <Text fz="xl" weight={700} mt="sm">{product.priceRange}</Text>
+          <Text fz="sm">
             in <Text component="span" c={"blue"} inherit>{product.stores} stores</Text>
           </Text>
-          <Text size="md" weight={700} mt="md">Screen Size:</Text>
+         </Box>
+          </Flex>
+          </Flex>
+          <Text fz="md" weight={700} mt="md">Screen Size:</Text>
           <Group spacing="xs" mt="xs">
             {product.sizes.map((size, index) => (
               <Button key={index} variant={selectedSize === size.size ? 'filled' : 'outline'} onClick={() => setSelectedSize(size.size)}>
@@ -82,11 +88,11 @@ const Hero = () => {
               </Button>
             ))}
           </Group>
-          <Text size="md" weight={700} mt="md">Color:</Text>
+          <Text fz="md" fw={700} mt="md">Color:</Text>
           <Group spacing="xs" mt="xs">
             {product.colors.map((color, index) => (
-              <Box key={index} onClick={() => setSelectedColor(color)} sx={{ cursor: 'pointer', border: selectedColor === color ? '2px solid black' : 'none' }}>
-                <Image src={color} width={70} height={70} alt={`Color ${index + 1}`} />
+              <Box style={{borderRadius:"100%",overflow:"hidden"}} key={index} onClick={() => setSelectedColor(color)} sx={{ cursor: 'pointer', border: selectedColor === color ? '2px solid black' : 'none' }}>
+                <Image src={color} w={56} h={56} alt={`Color ${index + 1}`} />
               </Box>
             ))}
           </Group>

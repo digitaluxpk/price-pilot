@@ -34,7 +34,7 @@ export default function RootLayout({ children }) {
             breakpoints: {
               xs: '5em',
               sm: '5em',
-              md: '64em',
+              md: '44em',
               lg: '74em',
               xl: '90em',
             },
@@ -45,7 +45,8 @@ export default function RootLayout({ children }) {
             <Flex
               direction={"column"}
               bg={"#fff"}
-              w={{ xs: "!00%", xl: "1440px" }}
+              w={{ xs: "100%", xl: "1440px" }}
+              px={12}
             >
               <Navbar />
               <Notifications position="top-right" zIndex={1000} />

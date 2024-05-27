@@ -7,6 +7,7 @@ import SideBar from "../component/subcategory/SideBar";
 import { IconChevronDown, IconSortAscending2 } from "@tabler/icons-react";
 import { useDisclosure } from "@mantine/hooks";
 import MobileFilter from "../component/subcategory/MobileFilters";
+import MobileSubcategory from "../mobilesubcategory/page";
 const SubCategory = () => {
   const [sortOption, setSortOption] = useState("Best Match");
   const [stickyFilter, setStickyFilter] = useState(false);
@@ -31,39 +32,44 @@ const SubCategory = () => {
     };
   }, []);
   return (
-    <Flex direction={"column"}>
+    <>
+    <Flex direction={"column"} w={"100%"}  >
       <BreadCrumb />
       <Text mt={34} fz={{sm:24,lg:32}} fw={600}>
         Smart Speakers & Displays
       </Text>
-      <Flex mt={40} gap={32} justify={"space-between"}>
+      <Flex w={"100%"} mt={40} gap={0} justify={"space-between"}>
         <SideBar />
-        <Box>
+        <Box w={"100%"}>
           <Flex
             pos={{xs:stickyFilter ? "fixed" : "static",lg:"static"}}
             top={68}
             py={10}
             mb={26}
+            left={5}
             bg={"#fff"}
             justify={"space-between"}
-            w={"90%"}
+            w={{xs:"100%",lg:"90%"}}
           >
             <Text fz={14} fw={600}>
               21,564 results
             </Text>
+            
             <Button
               radius={4}
               style={{ border: "1px solid #E5E7EB" }}
               c={"#000"}
               variant="transparent"
               onClick={handleFilterModal.open}
-              fz={400}
+              fw={400}
+              fz={14}
               display={{ xs: "block", lg: "none" }}
             >
-              <IconSortAscending2 /> Sort & Filters
+              <IconSortAscending2 /> 
+              Sort & Filters
             </Button>
             <Popover
-              display={{ xs: "none", md: "block" }}
+              display={{ xs: "none", lg: "block" }}
               width={300}
               trapFocus
               position="bottom"
@@ -115,7 +121,7 @@ const SubCategory = () => {
         </Box>
         <Flex
           w={256}
-          display={{ xs: "none", md: "block" }}
+          display={{ xs: "none", lg: "block" }}
           h={"300px"}
           align={"center"}
           justify={"center"}
@@ -129,6 +135,11 @@ const SubCategory = () => {
         onClose={handleFilterModal.close}
       />
     </Flex>
+    {/* <Box display={{ xs:"block",lg:"none"} }>
+    <MobileSubcategory />
+    </Box> */}
+
+    </>
   );
 };
 

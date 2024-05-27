@@ -64,11 +64,11 @@ function Sidebar() {
   
 
   return (
-    <Box w={400} display={{xs:"none",md:"block"}} >
+    <Box w={300} mr={20} display={{xs:"none",lg:"block"}} >
       <Title order={4} sx={{ marginBottom: 20 }}>Filter</Title>
       <TextInput placeholder="Find Filter" rightSection={ <IconSearch  />} />
 
-      <Accordion defaultValue="categories" w={400}>
+      <Accordion defaultValue="categories" w={300}>
         <Accordion.Item value="categories">
           <Accordion.Control fz={12}>Category</Accordion.Control>
           <Accordion.Panel>
