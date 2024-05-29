@@ -1,5 +1,6 @@
 "use client"
 import { Breadcrumbs, Anchor, Text, Box } from '@mantine/core';
+import { IconChevronRight } from '@tabler/icons-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -19,7 +20,7 @@ export default function Breadcrumb() {
     });
   return (
     <>
-      <Breadcrumbs separator="→" separatorMargin="md" mt="xs">
+      <Breadcrumbs separator={<IconChevronRight size={16} />} separatorMargin="md" mt="xs">
         {items}
       </Breadcrumbs>
     </>

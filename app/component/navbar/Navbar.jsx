@@ -9,8 +9,13 @@ import {
   Button,
   Menu,
   Drawer,
+  Group,
 } from "@mantine/core";
-import { IconChevronDown, IconSearch } from "@tabler/icons-react";
+import {
+  IconChevronDown,
+  IconChevronRight,
+  IconSearch,
+} from "@tabler/icons-react";
 import { useDisclosure } from "@mantine/hooks";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -43,10 +48,10 @@ function Navbar() {
 
   // Set up the scroll event listener
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
   return (
@@ -59,52 +64,145 @@ function Navbar() {
         justify={"space-between"}
         py={24}
         px={32}
+        bg={"#1D1D1D0D"}
+        style={{
+          boxShadow: "0px 2px 5px 0px rgba(29, 29, 29, 0.05)",
+        }}
       >
         <Flex align={"center"}>
-          <Box component={Link} href={"/"}>
-            <Image src={"/images/logo.png"} w={192} h={33} />
-          </Box>
+          {pathname !== "/" && (
+            <Box component={Link} href={"/"}>
+              <Image src={"/images/logo.png"} w={192} h={33} />
+            </Box>
+          )}
           {pathname !== "/" && (
             <Flex align={"center"}>
               <Menu withinPortal position="bottom-end">
                 <Menu.Target>
                   <Button variant="transparent" c={"#000"} ml={53}>
-                    Shop <IconChevronDown />
+                    Shop <IconChevronDown size={14} />
                   </Button>
                 </Menu.Target>
                 <Menu.Dropdown>
-                  <Menu.Item component={Link} href="/category">
-                    Category 1
+                  <Menu.Item>
+                    <Text fw={600} fz={14} ml={16}>
+                      Smart Home
+                    </Text>
+                  </Menu.Item>
+                  <Menu.Item  component={Link} href="/category">
+                    <Menu
+                    className="menu-item"
+                      trigger="hover"
+                    
+                      position="right"
+                      openDelay={100}
+                      closeDelay={400}
+                    >
+                      <Menu.Target>
+                        <Menu.Item
+                          rightSection={<IconChevronRight  size={14} />}
+                        >
+                          <Group position="apart">
+                            <Text size="sm">Smart Speakers & Displays</Text>
+                          </Group>
+                        </Menu.Item>
+                      </Menu.Target>
+                      <Menu.Dropdown>
+                        <Menu.Item>Speakers</Menu.Item>
+                        <Menu.Item>Displays</Menu.Item>
+                      </Menu.Dropdown>
+                    </Menu>
                   </Menu.Item>
                   <Menu.Item component={Link} href="/category">
-                    Category 2
+                    <Menu
+                      trigger="hover"
+                      position="right"
+                      openDelay={100}
+                      closeDelay={400}
+                      className="menu-item"
+                    >
+                      <Menu.Target>
+                        <Menu.Item
+                          rightSection={<IconChevronRight size={14} />}
+                        >
+                          <Group position="apart">
+                            <Text size="sm">Smart Lighting</Text>
+                          </Group>
+                        </Menu.Item>
+                      </Menu.Target>
+                      <Menu.Dropdown>
+                        <Menu.Item>Smart Light Bulbs</Menu.Item>
+                        <Menu.Item>LED Light Strips</Menu.Item>
+                        <Menu.Item>Smart Light Panels</Menu.Item>
+                        <Menu.Item>Smart Light Bars</Menu.Item>
+                        <Menu.Item>Smart Lighting Kits</Menu.Item>
+                        <Menu.Item>Smart Light Switches & Dimmers</Menu.Item>
+                      </Menu.Dropdown>
+                    </Menu>
                   </Menu.Item>
                   <Menu.Item component={Link} href="/category">
-                    Category 3
+                    <Group position="apart">
+                      <Text fz={14} ml={12}>
+                        {" "}
+                        Smart & Wi-fi Thermostats{" "}
+                      </Text>{" "}
+                    </Group>
                   </Menu.Item>
                   <Menu.Item component={Link} href="/category">
-                    Category 4
+                    <Menu className="menu-item" position="right" trigger="hover" openDelay={100} closeDelay={400}>
+                      <Menu.Target>
+                        <Menu.Item
+                          rightSection={<IconChevronRight size={14} />}
+                        >
+                          <Group position="apart">
+                            <Text size="sm">Smart Plugs & Outlets</Text>
+                          </Group>
+                        </Menu.Item>
+                      </Menu.Target>
+                      <Menu.Dropdown>
+                        <Menu.Item>Smart Plugs</Menu.Item>
+                        <Menu.Item>Smart Outlets</Menu.Item>
+                      </Menu.Dropdown>
+                    </Menu>
                   </Menu.Item>
+                  <Menu.Item component={Link} href="/category">
+                    <Menu className="menu-item" position="right" trigger="hover" openDelay={100} closeDelay={400}>
+                      <Menu.Target>
+                        <Menu.Item
+                          rightSection={<IconChevronRight size={14} />}
+                        >
+                          <Group position="apart">
+                            <Text size="sm">Wifi & Networking</Text>
+                          </Group>
+                        </Menu.Item>
+                      </Menu.Target>
+                      <Menu.Dropdown>
+                        <Menu.Item>Routers</Menu.Item>
+                        <Menu.Item>Range Extenders</Menu.Item>
+                      </Menu.Dropdown>
+                    </Menu>
+                  </Menu.Item>
+                
                 </Menu.Dropdown>
               </Menu>
               <Flex ml={24} w={546}>
                 <TextInput
                   w={"100%"}
-                  p={12}
+                  p={4}
                   placeholder="Start searching for a product"
+                  size="md"
                   radius={40}
                   rightSection={
                     <Box
                       bg={"#0034EC"}
                       px={8}
-                      pb={4}
-                      pt={8}
+                      pb={3}
+                      pt={4}
                       style={{ borderRadius: "100%" }}
                     >
-                      <IconSearch size={18} color="#fff" />
+                      <IconSearch size={14} color="#fff" />
                     </Box>
                   }
-                  rightSectionWidth={42}
                 />
               </Flex>
             </Flex>
@@ -126,16 +224,17 @@ function Navbar() {
           display={{ xs: "flex", lg: "none" }}
           justify="space-between"
           align="center"
-          p="md"
-          mx={12}
+          py={"md"}
+          p={16}
+          // mx={12}
           style={{
             position: stickyNavbar ? "fixed" : "static",
-            width:"100%",
+            width: "100%",
             top: 0,
-            left: -10,
-            margin:"0 12px",
+            paddingTop: 24,
             zIndex: 1000,
-            backgroundColor: "white",
+            backgroundColor: "#FAFBFD",
+            boxShadow: "0px 2px 5px 0px rgba(29, 29, 29, 0.05)",
           }}
         >
           <Flex

@@ -51,7 +51,7 @@ export default function CategoryCard() {
           </Box>
           <Group display={{xs:"none",md:"block"}}  position="left" spacing="xs" style={{ padding: '10px', paddingBottom: 20 }}>
             {product.colors.map(color => (
-              <Badge key={color} color={color} size="lg" />
+              <Badge key={color} color={color} size="lg" mx={4} />
             ))}
           </Group>
           <ColorOptions colors={product.colors} />

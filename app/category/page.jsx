@@ -4,7 +4,7 @@ import Main from "../component/category/Main"
 import Category from '../pages/Category'
 const page = () => {
   return (
-   <Box px={40}>
+   <Box px={{xs:12,lg:40}}>
     <Category />
    </Box>
   )
