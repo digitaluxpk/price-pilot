@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from 'react';
-import { Modal, TextInput, Accordion, Group, Box, Button, Text, NumberInput, RangeSlider, Checkbox, ScrollArea } from '@mantine/core';
+import { Modal, TextInput, Accordion, Group, Box, Button, Text, NumberInput, RangeSlider, Checkbox, ScrollArea, Drawer } from '@mantine/core';
 import { IconSearch, IconX } from '@tabler/icons-react';
 
 const brandss = [
@@ -151,7 +151,7 @@ const FilterModal = ({ opened, onClose }) => {
 );
 
   return (
-    <Modal
+    <Drawer
       opened={opened}
       onClose={onClose}
       title="Sort & Filters"
@@ -159,7 +159,8 @@ const FilterModal = ({ opened, onClose }) => {
       size="lg"
       overlayBlur={3}
       transition="pop"
-    >
+      position='bottom'
+      >
       <Box p="md">
         
         <TextInput
@@ -188,7 +189,7 @@ const FilterModal = ({ opened, onClose }) => {
           </Button>
         </Box>
       </Box>
-    </Modal>
+    </Drawer>
   );
 };
 

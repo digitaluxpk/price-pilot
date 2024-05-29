@@ -41,14 +41,14 @@ export default function RootLayout({ children }) {
             fontFamily: raleway.style.fontFamily,
           }
         }>
+            <Navbar />
           <Flex w={"100%"} justify={"center"}>
             <Flex
               direction={"column"}
               bg={"#fff"}
               w={{ xs: "100%", xl: "1440px" }}
-              px={12}
+              // px={12}
             >
-              <Navbar />
               <Notifications position="top-right" zIndex={1000} />
               {children}
               <Footer />

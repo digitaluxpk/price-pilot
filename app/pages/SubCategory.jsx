@@ -119,16 +119,7 @@ const SubCategory = () => {
           </Flex>
           <CategoryCard />
         </Box>
-        <Flex
-          w={256}
-          display={{ xs: "none", lg: "block" }}
-          h={"300px"}
-          align={"center"}
-          justify={"center"}
-          bg={"#D9D9D9"}
-        >
-          <Text fw={700}>Ads</Text>
-        </Flex>
+       
       </Flex>
       <MobileFilter
         opened={openedFilterModal}

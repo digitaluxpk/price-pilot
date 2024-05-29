@@ -17,37 +17,56 @@ const LandingPage = () => {
       align={"center"}
       direction={"column"}
     >
+      <Flex w={"100%"} mb={24} display={{xs:"flex",lg:"none"}} style={{overflowX:"scroll"}} gap={54} justify={"center"}>
+        {weOffer.map((items) => {
+          console.log("🚀 ~ {weOffer.map ~ items:", items)
+          return (
+            <Flex key={items.id} gap={16} component={Link} href={"/category"} 
+            style={{textDecoration:"none"}} c={"#000"}
+            >
+              <Image src={items.logo} alt="sadf" w={32} h={32} />
+              <Box>{items.title}</Box>
+            </Flex>
+          );
+        })}
+      </Flex>
       <Box>
-        <Image src="/images/hero.png" w={320} h={54} />
+        <Image src="/images/hero.png" w={{xs:214,lg:320}} h={{xs:30,lg:54}} />
       </Box>
-      <Text c={"#303030"} fz={{sm:16,lg:20}} fw={{sm:500,lg:400} } mx={12} mt={20} ta={"center"}>
+      <Text c={"#303030"} fz={{xs:16,lg:20}} fw={{sm:500,lg:400} } mx={12} mt={20} ta={"center"}>
       Find the best prices on Smart Home products online with PricePilot
       </Text>
-      <Flex ml={{md:32}} h={48} w={{xs:300,lg:702}}>
+      <Flex ml={{md:32}}  w={{xs:340,lg:702}}>
         <TextInput
-         w={{xs:362,lg:702}}
-          h={"100%"}
-          p={12}
-          placeholder="Start searching for a product"
+          mt={16}
+          size="lg"
+          
           radius={40}
+          w={{xs:340,lg:702}}
+          placeholder="Start searching for a product"
+          style={{
+            outline:"none",
+            border:"none"
+          }}
           rightSection={
-            <Box bg={"#0034EC"} px={8} pb={4} pt={8} style={{borderRadius:"100%"}} >
+            <Box bg={"#0034EC"} px={9} pb={4} pt={10} style={{borderRadius:"100%"}} >
                 <IconSearch size={18} color="#fff" />
             </Box>
           }
-          rightSectionWidth={42}
         />
+          {/* <TextInput h={"150%"} /> */}
       </Flex>
-      <Flex align={"center"} w={{sm:"100%",lg:790}} wrap={"wrap"} justify={"center"} gap={12} mt={32}>
+      <Flex align={"center"} w={{xs:"100%",lg:790}} wrap={"wrap"} justify={"center"} gap={12} mt={32}>
         {searchOptions.map((item) => {
           return (
             <Flex
               key={item.id}
-              p={12}
+              p={{xs:8,lg:12}}
               direction={"column"}
               justify={"center"}
               align={"center"}
-              w={160}
+              gap={8}
+              w={{sm:140,lg:180}}
               component={Link}
               href={"/category"}
               style={{textDecoration:"none"}}
@@ -58,7 +77,7 @@ const LandingPage = () => {
           );
         })}
       </Flex>
-      <Flex mt={121} gap={54} wrap={"wrap"} justify={"center"}>
+      <Flex display={{xs:"none",lg:"flex"}} mt={121} gap={54} wrap={"wrap"} justify={"center"}>
         {weOffer.map((items) => {
           return (
             <Flex key={items.id} gap={16} component={Link} href={"/category"} 

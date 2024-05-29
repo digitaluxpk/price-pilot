@@ -137,3 +137,7 @@ background-clip: text;
 /* .mantine-UnstyledButton-root{
   background-color: #000 !important;
 } */
+.menu-item:hover {
+  background-color: #0034EC;
+  color: #fff !important;
+}
