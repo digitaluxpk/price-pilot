@@ -23,7 +23,7 @@ const categories = [
 ]
 const MobileCategoryCard = () => {
   return (
-    <Flex gap={4} mt={24} display={{xs:"flex",md:"none"}} direction={"column"}>
+    <Flex gap={4} mt={24} display={{xs:"flex",md:"none"}} w={"100%"} direction={"column"}>
 {
     categories.map((category) =>{
         return(
