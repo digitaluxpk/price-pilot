@@ -110,6 +110,65 @@ export const weOffer = [
   },
 ];
 
+export const weOfferMobile = [
+  {
+    id: 1,
+    logo: "/images/search.png",
+    title: (
+      <Text fw={{sm:700,lg:500}} w={226}>
+        {" "}
+        <span style={{ color: "#0034EC" }}> Search</span> and{" "}
+        <span style={{ color: "#0034EC" }}> discover</span> the latest products.
+      </Text>
+    ),
+  },
+  {
+    id: 1,
+    logo: "/images/search.png",
+    title: (
+      <Text fw={{sm:700,lg:500}} w={226}>
+        {" "}
+        <span style={{ color: "#0034EC" }}> Search</span> and{" "}
+        <span style={{ color: "#0034EC" }}> discover</span> the latest products.
+      </Text>
+    ),
+  },
+  {
+    id: 4,
+    logo: "/images/search.png",
+    title: (
+      <Text fw={{sm:700,lg:500}} w={226}>
+        {" "}
+        <span style={{ color: "#0034EC" }}> Search</span> and{" "}
+        <span style={{ color: "#0034EC" }}> discover</span> the latest products.
+      </Text>
+    ),
+  },
+  {
+    id: 2,
+    logo: "/images/combine.png",
+    title: (
+      <Text fw={{sm:700,lg:500}} w={226}>
+        {" "}
+        <span style={{ color: "#0034EC" }}> Compare</span> and{" "}
+        <span style={{ color: "#0034EC" }}> find</span> products that you need.
+      </Text>
+    ),
+  },
+  {
+    id: 3,
+    logo: "/images/dollar.png",
+    title: (
+      <Text fw={{sm:700,lg:500}} w={226}>
+        {" "}
+        <span style={{ color: "#0034EC" }}> Find</span> the{" "}
+        <span style={{ color: "#0034EC" }}> best deals</span> from trusted
+        retailers in the US.
+      </Text>
+    ),
+  },
+];
+
 export const categoryCard = [
   {
     id: 1,

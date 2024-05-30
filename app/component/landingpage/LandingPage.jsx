@@ -1,4 +1,4 @@
-import { searchOptions, weOffer } from "@/Constants";
+import { searchOptions, weOffer, weOfferMobile } from "@/Constants";
 import { Box, Button, Flex, Image, Text, TextInput } from "@mantine/core";
 import { IconSearch } from "@tabler/icons-react";
 import Link from "next/link";
@@ -17,14 +17,13 @@ const LandingPage = () => {
       align={"center"}
       direction={"column"}
     >
-      <Flex w={"100%"} mb={24} display={{xs:"flex",lg:"none"}} style={{overflowX:"scroll"}} gap={54} justify={"center"}>
-        {weOffer.map((items) => {
-          console.log("🚀 ~ {weOffer.map ~ items:", items)
+      <Flex className="mob-scroll"  w={350} mb={48} display={{xs:"flex",lg:"none"}} style={{overflow:"scroll"}} gap={54} justify={"center"}>
+        {weOfferMobile.map((items) => {
           return (
             <Flex key={items.id} gap={16} component={Link} href={"/category"} 
             style={{textDecoration:"none"}} c={"#000"}
             >
-              <Image src={items.logo} alt="sadf" w={32} h={32} />
+              <Image src={items.logo} alt="weoffer" w={32} h={32} />
               <Box>{items.title}</Box>
             </Flex>
           );
@@ -40,7 +39,6 @@ const LandingPage = () => {
         <TextInput
           mt={16}
           size="lg"
-          
           radius={40}
           w={{xs:340,lg:702}}
           placeholder="Start searching for a product"

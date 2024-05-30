@@ -10,9 +10,11 @@ import {
   Menu,
   Drawer,
   Group,
+  Divider,
 } from "@mantine/core";
 import {
   IconChevronDown,
+  IconChevronLeft,
   IconChevronRight,
   IconSearch,
 } from "@tabler/icons-react";
@@ -24,6 +26,15 @@ import { useEffect, useState } from "react";
 function Navbar() {
   const pathname = usePathname();
   const [stickyNavbar, setStickyNavbar] = useState(false);
+  const [menuOpened, setMenuOpened] = useState(false);
+  const [submenu, setSubmenu] = useState(null);
+  const handleOpenSubmenu = (menu) => {
+    setSubmenu(menu);
+  };
+
+  const handleCloseSubmenu = () => {
+    setSubmenu(null);
+  };
   //   const toggleMenu = () => {
   //     setOpened((o) => !o);
   //   };
@@ -255,29 +266,86 @@ function Navbar() {
               <Box component={Link} href={"/"}>
                 <Image src={"/images/logo.png"} w={192} h={33} />
               </Box>
-              <Box
+              <Flex
                 onClick={handleSearchBar.open}
                 bg={"#0034EC"}
-                px={8}
-                pb={4}
-                pt={8}
+                h={36}
+                w={36}
+                align={"center"}
+                justify={"center"}
                 style={{ borderRadius: "100%" }}
               >
-                <IconSearch size={18} color="#fff" />
-              </Box>
+                <IconSearch size={16} color="#fff" />
+              </Flex>
             </>
           )}
         </Flex>
 
-        <Drawer opened={opened} onClose={close} padding="xl" size="md">
-          <Flex gap={8} direction={"column"} align={"center"}>
-            <Text href={"#"} component={Link}>
-              Blog
-            </Text>
-            <Text href={"#"} component={Link}>
-              About Us
-            </Text>
-          </Flex>
+        <Drawer opened={opened} 
+        title={
+          <Image src={"/images/mobile-submenu-logo.png"} />
+        }
+        onClose={close} padding="xl" size="md">
+        {!submenu ? (
+          <Box>
+            <Group position="apart" mb="md">
+              <Text fw={600}>Smart Home</Text>
+            </Group>
+            <Divider mb="sm" />
+            <Flex  gap={12} direction="column" spacing="xs" grow>
+              <Flex w={"100%"} justify={"space-between"} align={"center"}  onClick={() => handleOpenSubmenu('Smart Lighting')}>
+                <Text fz={14} fw={500}>Smart Speakers & Displays</Text>
+                <IconChevronRight  color="#0034EC" size={18} />
+              </Flex>
+              <Flex w={"100%"} justify={"space-between"} align={"center"} onClick={() => handleOpenSubmenu('Smart Lighting')}>
+                <Text fz={14} fw={500}>Smart Lighting</Text>
+                <IconChevronRight color="#0034EC" size={18} />
+                </Flex>
+              <Flex w={"100%"} justify={"space-between"} align={"center"} onClick={() => handleOpenSubmenu('Smart Plugs & Outlets')}>
+                <Text fz={14} fw={500}>Smart Plugs & Outlets</Text>
+                <IconChevronRight color="#0034EC" size={18} />
+                </Flex>
+              <Flex w={"100%"} justify={"space-between"} align={"center"} onClick={() => handleOpenSubmenu('Smart & Wi-fi Thermostats')}>
+                <Text fz={14} fw={500}>Smart & Wi-fi Thermostats</Text>
+                <IconChevronRight color="#0034EC" size={18} />
+                </Flex>
+              <Flex w={"100%"} justify={"space-between"} align={"center"} onClick={() => handleOpenSubmenu('Home Security & Monitoring')}>
+                <Text fz={14} fw={500}>Home Security & Monitoring</Text>
+                <IconChevronRight color="#0034EC" size={18} />
+                </Flex>
+              <Flex w={"100%"} justify={"space-between"} align={"center"} onClick={() => handleOpenSubmenu('Wifi & Networking')}>
+                <Text fz={14} fw={500}>Wifi & Networking</Text>
+                <IconChevronRight color="#0034EC" size={18} />
+                </Flex>
+            </Flex>
+            <Divider my="md" />
+            <Flex direction="column">
+              <Text  fw={500}>About Us</Text>
+              <Text  fw={500}>Blog</Text>
+            </Flex>
+          </Box>
+        ) : (
+          <Box>
+            <Flex c={"#0034EC"} align={"center"}>
+              <Text fz={14} onClick={handleCloseSubmenu} style={{ cursor: 'pointer' }}>
+                <IconChevronLeft size={18} /> Back
+              </Text>
+            </Flex>
+            <Divider mb="sm" />
+            {submenu === 'Smart Lighting' && (
+              <Flex direction="column" gap={16}>
+                <Text fz={14}>Smart Light Bulbs</Text>
+                <Text fz={14}>LED Light Strips</Text>
+                <Text fz={14}>Smart Light Panels</Text>
+                <Text fz={14}>Smart Light Bars</Text>
+                <Text fz={14}>Smart Lighting Kits</Text>
+                <Text fz={14}>Smart Light Switches & Dimmers</Text>
+              </Flex>
+            )}
+            {/* Add more submenu items here as needed */}
+          </Box>
+        )}
+          
         </Drawer>
         <Drawer
           opened={openedSearchBar}
