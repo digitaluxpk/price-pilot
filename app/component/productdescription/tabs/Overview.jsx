@@ -1,5 +1,5 @@
 "use client"
-import { Box, List, Text, ThemeIcon } from "@mantine/core";
+import { Accordion, Box, List, Text, ThemeIcon } from "@mantine/core";
 import { IconCheck } from "@tabler/icons-react";
 import React from "react";
 const features = [
@@ -22,10 +22,20 @@ const features = [
   ];
 const Overview = () => {
   return (
-    <Box mt={44} mb={8}>
+    <Accordion
+    style={{
+      scrollBehavior:"smooth"
+    }}
+    id='overview' mt={24} defaultValue="overview">
+      <Accordion.Item value='overview'>
+      <Accordion.Control >
       <Text fz={24} fw={700}>
         Product Overview
       </Text>
+      </Accordion.Control>
+      <Accordion.Panel>
+    <Box mt={44} mb={8}>
+      
       <Text>
         Take in every moment with breathtaking 4K Ultra HD on this 55-inch
         screen. Its equipped with DTS Studio Sound to create realistic and
@@ -48,6 +58,10 @@ const Overview = () => {
         ))}
       </List>
     </Box>
+    </Accordion.Panel>
+
+    </Accordion.Item>
+    </Accordion>
   );
 };
 

@@ -10,7 +10,7 @@ const ColorOptions = ({ colors }) => {
   const [opened, setOpened] = useState(false);
 
   return (
-    <Group mt={12} display={{xs:"flex",md:"none"}}  spacing="xs">
+    <Group mt={12} display={{xs:"flex",md:"none"}} mb={12}  spacing="xs">
       {visibleColors.map((color, index) => (
         <Box
           key={index}

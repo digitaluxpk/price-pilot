@@ -10,6 +10,7 @@
 }
 .body{
     overflow: scroll;
+    scroll-behavior: smooth !important;
     scrollbar-width: none;
     -ms-overflow-style: none; 
 
@@ -18,6 +19,7 @@
       height: 0;
     }
 }
+
 .mantine-AppShell-navbar{
     overflow: scroll;
     scrollbar-width: none;

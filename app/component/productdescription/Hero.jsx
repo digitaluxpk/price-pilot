@@ -39,7 +39,7 @@ const Hero = () => {
 
          <Flex gap={12} direction={"column"} align={"center"}>
          <Image w={{xs:300,md:"80%",lg:380}} src={selectedImage} alt={product.name} />
-          <Flex className='hide-scrollbar' w={{xs:320,md:550,lg:350}} gap={12} style={{overflow:"scroll"}} mt="md" spacing="xs">
+          <Flex className='mob-scroll' w={{xs:320,md:550,lg:350}} gap={12} style={{overflow:"scroll"}} mt="md" spacing="xs">
             {product.images.map((image, index) => (
               <Box key={index} onClick={() => setSelectedImage(image)} sx={{ cursor: 'pointer', border: selectedImage === image ? '2px solid black' : 'none' }}>
                 <Image src={image} w={70} height={70} alt={`Product Image ${index + 1}`} />

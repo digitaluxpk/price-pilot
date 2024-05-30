@@ -1,5 +1,7 @@
+"use client"
 import { searchOptions, weOffer, weOfferMobile } from "@/Constants";
 import { Box, Button, Flex, Image, Text, TextInput } from "@mantine/core";
+import { useMediaQuery } from "@mantine/hooks";
 import { IconSearch } from "@tabler/icons-react";
 import Link from "next/link";
 import React from "react";
@@ -8,6 +10,7 @@ import React from "react";
 
 
 const LandingPage = () => {
+  const isBigResolution = useMediaQuery("(max-height: 900px) ")
   return (
     <Flex
       mt={42}
@@ -16,9 +19,11 @@ const LandingPage = () => {
       justify={"center"}
       align={"center"}
       direction={"column"}
+      h={isBigResolution == false && "85vh"}
+      
     >
-      <Flex className="mob-scroll"  w={350} mb={48} display={{xs:"flex",lg:"none"}} style={{overflow:"scroll"}} gap={54} justify={"center"}>
-        {weOfferMobile.map((items) => {
+      <Flex className="mob-scroll"  w={375} px={14} mb={48}  display={{xs:"flex",lg:"none"}} style={{overflow:"scroll"}} gap={24} >
+        {weOffer.map((items) => {
           return (
             <Flex key={items.id} gap={16} component={Link} href={"/category"} 
             style={{textDecoration:"none"}} c={"#000"}

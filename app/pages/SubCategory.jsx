@@ -47,6 +47,11 @@ const SubCategory = () => {
             py={10}
             mb={26}
             left={5}
+            style={{
+              zIndex:"10000",
+              boxShadow: "0px 2px 5px 0px rgba(29, 29, 29, 0.05)"
+            }}
+            px={14}
             bg={"#fff"}
             justify={"space-between"}
             w={{xs:"100%",lg:"90%"}}

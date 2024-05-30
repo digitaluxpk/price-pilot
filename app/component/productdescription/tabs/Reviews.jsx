@@ -1,4 +1,5 @@
-import { Box, Button, Card, Flex, Group, Image, Progress, Rating, Text } from '@mantine/core'
+"use client"
+import { Accordion, Box, Button, Card, Flex, Group, Image, Progress, Rating, Text } from '@mantine/core'
 import React from 'react'
 const reviews = [
     {
@@ -21,9 +22,17 @@ const reviews = [
   
 const Reviews = () => {
   return (
-    <Box mt={44}>
+    <Accordion  style={{
+      scrollBehavior:"smooth"
+    }} id='review' mt={24} defaultValue='review'>
+      <Accordion.Item value='review'>
+      <Accordion.Control >
+      <Text fz={24} fw={700}>Reviews</Text>
+      </Accordion.Control>
+      <Accordion.Panel>
+    <Box  mt={44}>
         <Box>
-            <Text fz={24} fw={700}>Reviews</Text>
+            
             <Text mt={8}>What other people think of this product</Text>
         </Box>
         <Box>
@@ -40,7 +49,7 @@ const Reviews = () => {
                   </span>
                 </Text>
               </Box>
-        <Flex gap={16} mt={24}>
+        <Flex gap={16} mt={24} direction={{xs:"column",lg:"row"}}>
             <Flex direction={"column"}>
                 <Flex gap={16}>
                 <Image w={16} h={16} src={"/images/star.png"} />
@@ -106,8 +115,14 @@ const Reviews = () => {
         </Card>
       ))}
         </Box>
-        <Button variant='transparent' bg={"#0034EC"} p={16} radius={8} c={"#fff"}></Button>
+        <Button variant='transparent' bg={"#0034EC"} px={16} py={0} radius={8} c={"#fff"}>
+
+          See all customer review
+        </Button>
     </Box>
+    </Accordion.Panel>
+    </Accordion.Item>
+    </Accordion>
   )
 }
 

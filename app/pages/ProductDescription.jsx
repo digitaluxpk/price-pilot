@@ -4,13 +4,24 @@ import Hero from '../component/productdescription/Hero'
 import TabsSections from '../component/productdescription/tabs/TabsSections'
 import MostRelated from '../component/productdescription/MostRelated'
 import CustomerViewed from '../component/productdescription/CustomerViewed'
+import Reviews from '../component/productdescription/tabs/Reviews'
+import Prices from '../component/productdescription/tabs/Prices'
+import Overview from '../component/productdescription/tabs/Overview'
+import Specifications from '../component/productdescription/tabs/Specifications'
 
 const ProductDescription = () => {
   return (
-    <Box>
+    <Box style={{
+      overflow:"scroll",
+      scrollBehavior: 'smooth '
+    }}>
         <Hero />
         <TabsSections />
-        <MostRelated />
+        <Prices />
+        <Reviews />
+        <Overview />
+        <Specifications />
+        {/* <MostRelated /> */}
         <CustomerViewed />
     </Box>
   )

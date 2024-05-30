@@ -10,13 +10,13 @@ const elements = [
         123
       </Text>
     ),
-    symbol: <Box fz={14}><Text c={"#626262"}>Free shipping as early as </Text><Text fw={500}>Mon, may 28</Text> </Box>,
+    symbol: <Flex gap={4} fz={14}><Text c={"#626262"}>Free shipping as early as </Text><Text fw={500}>Mon, may 28</Text> </Flex>,
     name: <List w={170} fz={14}>
     <List.Item>Low Price Guarantee</List.Item>
     <List.Item>Returns free of charge for 30 days. </List.Item>
   
   </List> ,
-  btn:<Button px={24} size="md" py={14} c={"#0034EC"}
+  btn:<Button px={24} size="md" py={0} c={"#0034EC"}
   style={{border:"1px solid #0034EC"}}
   variant="transparent" >Buy on Best Buy</Button>
   },
@@ -27,13 +27,13 @@ const elements = [
         123
       </Text>
     ),
-    symbol: <Box fz={14}><Text c={"#626262"}>Free shipping as early as </Text><Text fw={500}>Mon, may 28</Text> </Box>,
+    symbol: <Flex gap={4}  fz={14}><Text c={"#626262"}>Free shipping as early as </Text><Text fw={500}>Mon, may 28</Text> </Flex>,
     name: <List w={170} fz={14}>
     <List.Item>Low Price Guarantee</List.Item>
     <List.Item>Returns free of charge for 30 days. </List.Item>
   
   </List> ,
-  btn:<Button px={24} size="md" py={14} c={"#0034EC"}
+  btn:<Button px={24} size="md" py={0} c={"#0034EC"}
   style={{border:"1px solid #0034EC"}}
   variant="transparent" >Buy on Best Buy</Button>
   },
@@ -51,8 +51,16 @@ const Prices = () => {
     </Table.Tr>
   ));
   return (
-    <Box mt={44}>
-        <Flex mb={44} w={"100%"} justify={"end"}>
+    <Box id="price" 
+    w={"100%"}
+    style={{
+      overflow:"scroll",
+      scrollBehavior:"smooth"
+    }}
+    className="mob-scroll"
+    mt={44}
+    >
+        <Flex mb={44} w={"100%"} justify={"start"}>
         <Popover
               display={{ xs: "none", md: "block" }}
               width={300}

@@ -1,15 +1,18 @@
 "use client";
 
 import { Text, Group, Divider, Image, Box, Flex } from "@mantine/core";
+import { useMediaQuery } from "@mantine/hooks";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const Footer = () => {
   const pathname = usePathname();
+  const isBigResolution = useMediaQuery("(max-height: 900px) ")
   return (
     <>
       {pathname == "/" ? (
-        <Flex justify={"center"} mb={50} ml={{ xs: 12, lg: 0 }} mt={104}>
+        <Flex pos={isBigResolution == false ? "absolute":"static"} w={isBigResolution == false && "80%"}
+        bottom={isBigResolution == false && 0} justify={"center"} mb={30} ml={{ xs: 12, lg: 0 }} mt={isBigResolution && 104}>
           <Flex mt={12} fz={12} align={"center"} gap={16}>
             <Text fz={{ xs: 14, lg: 16 }} c={"#212427"}>
               &copy; 2024 PricePilot
@@ -56,23 +59,7 @@ const Footer = () => {
                   We are entirely independent and free to use and are constantly
                   growing the assortment of products.
                 </Text>
-                <Flex
-                  display={{ xs: "none", lg: "flex" }}
-                  mt={12}
-                  fz={12}
-                  align={"center"}
-                  gap={16}
-                >
-                  <Text c={"#212427"}>&copy; 2024 PricePilot</Text>
-                  <Group>
-                    <Text c={"#0034EC"} fz={14}>
-                      Privacy Policy
-                    </Text>
-                    <Text c={"#0034EC"} fz={14}>
-                      Terms & Conditions
-                    </Text>
-                  </Group>
-                </Flex>
+                
               </Box>
               <Flex gap={{ xs: 24, lg: 110 }}>
                 <Box>
@@ -114,9 +101,9 @@ const Footer = () => {
                 </Box>
               </Flex>
             </Flex>
-            {/* for mobile */}
+            
             <Flex
-              display={{ xs: "flex", lg: "none" }}
+              
               mt={12}
               fz={12}
               align={"center"}
@@ -133,7 +120,8 @@ const Footer = () => {
               </Group>
             </Flex>
           </Flex>
-          <Flex direction={"column"} ml={12}>
+          {/* for mobile */}
+          <Flex mt={140} display={{ xs: "flex", lg: "none" }} direction={"column"} ml={12}>
             <Flex direction={"column"} gap={{ xs: 24, lg: 110 }}>
               <Box>
                 <Text fw={600} mb="xs">
@@ -191,7 +179,9 @@ const Footer = () => {
                 We are entirely independent and free to use and are constantly
                 growing the assortment of products.
               </Text>
-              <Flex mt={24} fz={12} mb={24} direction={"column"} gap={8}>
+              <Flex
+              
+              mt={24} fz={12} mb={24} direction={"column"} gap={8}>
                 <Text fz={12} c={"#212427"}>
                   &copy; 2024 PricePilot
                 </Text>
