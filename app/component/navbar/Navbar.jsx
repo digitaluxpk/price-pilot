@@ -287,7 +287,10 @@ function Navbar() {
         }
         onClose={close} padding="xl" size="md">
         {!submenu ? (
-          <Box>
+          <>
+          {
+            pathname != "/" &&
+            <Box>
             <Group position="apart" mb="md">
               <Text fw={600}>Smart Home</Text>
             </Group>
@@ -319,12 +322,18 @@ function Navbar() {
                 </Flex>
             </Flex>
             <Divider my="md" />
-            <Flex direction="column">
+            <Flex direction="column" gap={12}>
               <Text  fw={500}>About Us</Text>
               <Text  fw={500}>Blog</Text>
             </Flex>
           </Box>
+
+          }
+          </>
         ) : (
+          <>
+          {
+            pathname != "/" &&
           <Box>
             <Flex c={"#0034EC"} align={"center"}>
               <Text fz={14} onClick={handleCloseSubmenu} style={{ cursor: 'pointer' }}>
@@ -332,6 +341,9 @@ function Navbar() {
               </Text>
             </Flex>
             <Divider mb="sm" />
+            <Text mb={12} fw={600}>
+            Smart Lighting
+            </Text>
             {submenu === 'Smart Lighting' && (
               <Flex direction="column" gap={16}>
                 <Text fz={14}>Smart Light Bulbs</Text>
@@ -343,9 +355,16 @@ function Navbar() {
               </Flex>
             )}
             {/* Add more submenu items here as needed */}
-          </Box>
+          </Box>}
+          </>
         )}
-          
+          {
+            pathname == "/" &&
+            <Flex direction="column" gap={12}>
+              <Text  fw={500}>About Us</Text>
+              <Text  fw={500}>Blog</Text>
+            </Flex>
+          }
         </Drawer>
         <Drawer
           opened={openedSearchBar}

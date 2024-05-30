@@ -1,12 +1,22 @@
-import { Box, Flex, Text } from '@mantine/core'
+
+"use client"
+import { Accordion, Box, Flex, Text } from '@mantine/core'
 import React from 'react'
 
 const Specifications = () => {
   return (
-    <Box>
-        <Text fz={24} fw={700}>
+    <Accordion  style={{
+        scrollBehavior:"smooth"
+      }} id='spec' defaultValue='spec' mt={24} defaultChecked>
+      <Accordion.Item value='spec'>
+      <Accordion.Control >
+      <Text fz={24} fw={700}>
             Specifications
         </Text>
+      </Accordion.Control>
+      <Accordion.Panel>
+    <Box>
+        
         <Text mt={24} fw={700}>
         Header
         </Text>
@@ -19,6 +29,9 @@ const Specifications = () => {
             </Box>
         </Flex>
     </Box>
+    </Accordion.Panel>
+    </Accordion.Item>
+    </ Accordion >
   )
 }
 
