@@ -13,7 +13,7 @@ const LandingPage = () => {
   const isBigResolution = useMediaQuery("(max-height: 900px) ")
   return (
     <Flex
-      mt={42}
+      // mt={42}
       mx={12}
       c={"#000"}
       justify={"center"}

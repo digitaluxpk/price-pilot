@@ -7,9 +7,9 @@ const Specifications = () => {
   return (
     <Accordion  style={{
         scrollBehavior:"smooth"
-      }} id='spec' defaultValue='spec' mt={24} defaultChecked>
+      }} id='spec' defaultValue='spec' p={0} m={0} mt={24} defaultChecked>
       <Accordion.Item value='spec'>
-      <Accordion.Control >
+      <Accordion.Control p={0} m={0} >
       <Text fz={24} fw={700}>
             Specifications
         </Text>

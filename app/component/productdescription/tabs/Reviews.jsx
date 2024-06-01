@@ -22,18 +22,18 @@ const reviews = [
   
 const Reviews = () => {
   return (
-    <Accordion  style={{
+    <Accordion p={0} m={0}  style={{
       scrollBehavior:"smooth"
     }} id='review' mt={24} defaultValue='review'>
       <Accordion.Item value='review'>
-      <Accordion.Control >
+      <Accordion.Control p={0} m={0} >
       <Text fz={24} fw={700}>Reviews</Text>
       </Accordion.Control>
-      <Accordion.Panel>
-    <Box  mt={44}>
+      <Accordion.Panel p={0} m={0}>
+    <Box  mt={0}>
         <Box>
             
-            <Text mt={8}>What other people think of this product</Text>
+            <Text mt={0}>What other people think of this product</Text>
         </Box>
         <Box>
                 <Flex align={"center"} gap={8}>
@@ -102,7 +102,7 @@ const Reviews = () => {
         </Flex>
         <Box>
         {reviews.map((review, index) => (
-        <Card key={index} shadow="sm" padding="lg" mb="lg" withBorder>
+        <Card mt={"lg"} key={index} shadow="sm" padding="lg" mb="lg" withBorder>
           <Group align="center">
             <Rating value={review.rating} readOnly />
           </Group>
