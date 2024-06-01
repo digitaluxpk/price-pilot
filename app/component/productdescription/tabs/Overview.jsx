@@ -26,15 +26,16 @@ const Overview = () => {
     style={{
       scrollBehavior:"smooth"
     }}
+    p={0} m={0}
     id='overview' mt={24} defaultValue="overview">
-      <Accordion.Item value='overview'>
-      <Accordion.Control >
-      <Text fz={24} fw={700}>
+      <Accordion.Item value='overview' p={0} m={0}>
+      <Accordion.Control p={0} m={0}>
+      <Text fz={24} p={0} m={0} fw={700}>
         Product Overview
       </Text>
       </Accordion.Control>
-      <Accordion.Panel>
-    <Box mt={44} mb={8}>
+      <Accordion.Panel p={0} m={0}>
+    <Box mt={0} mb={8}>
       
       <Text>
         Take in every moment with breathtaking 4K Ultra HD on this 55-inch

@@ -154,3 +154,7 @@ background-clip: text;
 .mob-scroll::-webkit-scrollbar {
   display: none;
 }
+
+.spacing{
+  margin: 16px 0px !important;
+}

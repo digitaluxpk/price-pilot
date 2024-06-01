@@ -66,16 +66,15 @@ function Navbar() {
     };
   }, []);
   return (
-    <Box>
+    <Box w={"100%"} >
       <Flex
         align={"center"}
-        w={"100%"}
+        w={{ xs: "100%",lg:"100%", xl: "1440px" }}
         direction={"row"}
         display={{ lg: "flex", xs: "none" }}
         justify={"space-between"}
         py={24}
         px={32}
-        bg={"#1D1D1D0D"}
         style={{
           boxShadow: "0px 2px 5px 0px rgba(29, 29, 29, 0.05)",
         }}
@@ -83,7 +82,7 @@ function Navbar() {
         <Flex align={"center"}>
           {pathname !== "/" && (
             <Box component={Link} href={"/"}>
-              <Image src={"/images/logo.png"} w={192} h={33} />
+              <Image src={"/images/logo.png"} w={192} h={32} />
             </Box>
           )}
           {pathname !== "/" && (
@@ -244,7 +243,7 @@ function Navbar() {
             top: 0,
             paddingTop: 24,
             zIndex: 1000,
-            backgroundColor: "#FAFBFD",
+            backgroundColor: "#FBFCFE",
             boxShadow: "0px 2px 5px 0px rgba(29, 29, 29, 0.05)",
           }}
         >
@@ -264,7 +263,7 @@ function Navbar() {
           {pathname !== "/" && (
             <>
               <Box component={Link} href={"/"}>
-                <Image src={"/images/logo.png"} w={192} h={33} />
+                <Image src={"/images/logo.png"} w={192} h={32} />
               </Box>
               <Flex
                 onClick={handleSearchBar.open}

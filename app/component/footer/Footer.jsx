@@ -11,8 +11,8 @@ const Footer = () => {
   return (
     <>
       {pathname == "/" ? (
-        <Flex pos={isBigResolution == false ? "absolute":"static"} w={isBigResolution == false && "80%"}
-        bottom={isBigResolution == false && 0} justify={"center"} mb={30} ml={{ xs: 12, lg: 0 }} mt={isBigResolution && 104}>
+        <Flex pos={isBigResolution == false ? "absolute":"static"} w={isBigResolution == false && "100%"}
+        bottom={isBigResolution == false && 0} left={0} justify={"center"} mb={30} pl={{ xs: 12, lg: 0 }} mt={isBigResolution && 104}>
           <Flex mt={12} fz={12} align={"center"} gap={16}>
             <Text fz={{ xs: 14, lg: 16 }} c={"#212427"}>
               &copy; 2024 PricePilot
@@ -42,8 +42,8 @@ const Footer = () => {
               <Image
                 src="/images/footer-logo.png"
                 alt="PricePilot"
-                h={{ xs: 30, lg: 51 }}
-                w={{ xs: 214, md: 300 }}
+                h={{ xs: 30, lg: 32 }}
+                w={{ xs: 214, md: 192 }}
               />
             </Box>
             <Flex
@@ -165,8 +165,8 @@ const Footer = () => {
               <Image
                 src="/images/footer-logo.png"
                 alt="PricePilot"
-                h={{ xs: 30, lg: 51 }}
-                w={{ xs: 214, md: 300 }}
+                h={{ xs: 32, lg: 51 }}
+                w={{ xs: 192, md: 300 }}
               />
             </Box>
             <Box w={{ xs: 300, md: 390 }}>

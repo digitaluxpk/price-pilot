@@ -11,11 +11,11 @@ const elements = [
       </Text>
     ),
     symbol: <Flex gap={4} fz={14}><Text c={"#626262"}>Free shipping as early as </Text><Text fw={500}>Mon, may 28</Text> </Flex>,
-    name: <List w={170} fz={14}>
-    <List.Item>Low Price Guarantee</List.Item>
-    <List.Item>Returns free of charge for 30 days. </List.Item>
+  //   name: <List w={170} fz={14}>
+  //   <List.Item>Low Price Guarantee</List.Item>
+  //   <List.Item>Returns free of charge for 30 days. </List.Item>
   
-  </List> ,
+  // </List> ,
   btn:<Button px={24} size="md" py={0} c={"#0034EC"}
   style={{border:"1px solid #0034EC"}}
   variant="transparent" >Buy on Best Buy</Button>
@@ -28,11 +28,11 @@ const elements = [
       </Text>
     ),
     symbol: <Flex gap={4}  fz={14}><Text c={"#626262"}>Free shipping as early as </Text><Text fw={500}>Mon, may 28</Text> </Flex>,
-    name: <List w={170} fz={14}>
-    <List.Item>Low Price Guarantee</List.Item>
-    <List.Item>Returns free of charge for 30 days. </List.Item>
+  //   name: <List w={170} fz={14}>
+  //   <List.Item>Low Price Guarantee</List.Item>
+  //   <List.Item>Returns free of charge for 30 days. </List.Item>
   
-  </List> ,
+  // </List> ,
   btn:<Button px={24} size="md" py={0} c={"#0034EC"}
   style={{border:"1px solid #0034EC"}}
   variant="transparent" >Buy on Best Buy</Button>
@@ -40,13 +40,14 @@ const elements = [
 ];
 const Prices = () => {
     const [opened, setOpened] = useState(false);
-    const [sortOption, setSortOption] = useState("Sort by");
+    const [sortOption, setSortOption] = useState("Lowest Price");
   const rows = elements.map((element) => (
-    <Table.Tr key={element.name}>
+    
+    <Table.Tr bg={"#FAFBFD"} key={element.name} h={134}  m={32} margin className="spacing" >
       <Table.Td>{element.position}</Table.Td>
       <Table.Td>{element.mass}</Table.Td>
       <Table.Td>{element.symbol}</Table.Td>
-      <Table.Td>{element.name}</Table.Td>
+      {/* <Table.Td>{element.name}</Table.Td> */}
       <Table.Td>{element.btn}</Table.Td>
     </Table.Tr>
   ));
@@ -58,9 +59,9 @@ const Prices = () => {
       scrollBehavior:"smooth"
     }}
     className="mob-scroll"
-    mt={44}
+    mt={24}
     >
-        <Flex mb={44} w={"100%"} justify={"start"}>
+        <Flex mb={16} w={"100%"} justify={"start"}>
         <Popover
               display={{ xs: "none", md: "block" }}
               width={300}
@@ -110,17 +111,17 @@ const Prices = () => {
               </Popover.Dropdown>
             </Popover>
         </Flex>
-      <Table >
+      <Table withRowBorders={false} cellSpacing={16} verticalSpacing={12} >
         <Table.Thead>
           <Table.Tr>
             <Table.Th>Sold by</Table.Th>
             <Table.Th>Price</Table.Th>
             <Table.Th>Delivery</Table.Th>
-            <Table.Th>Additional details</Table.Th>
+            {/* <Table.Th>Additional details</Table.Th> */}
             <Table.Th></Table.Th>
           </Table.Tr>
         </Table.Thead>
-        <Table.Tbody >{rows}</Table.Tbody>
+        <Table.Tbody  >{rows}</Table.Tbody>
       </Table>
     </Box>
   );
