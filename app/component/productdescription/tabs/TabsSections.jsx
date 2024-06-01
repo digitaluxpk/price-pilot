@@ -66,7 +66,7 @@ const TabsSections = () => {
       }}
       className="mob-scroll"
     >
-    {/* { stickyTab == false && <Tabs display={{xs:"none",lg:"block"}} defaultValue="prices">
+    { stickyTab == false && <Tabs display={{xs:"none",lg:"block"}} defaultValue="prices">
       <Tabs.List
       bg={"#fff"}
       w={500}
@@ -101,7 +101,7 @@ const TabsSections = () => {
         </Text>
         </Tabs.Tab>
       </Tabs.List>
-      </Tabs>} */}
+      </Tabs>}
       {/* { stickyTabMob === false && 
       } */}
       { stickyTabMob ? 
