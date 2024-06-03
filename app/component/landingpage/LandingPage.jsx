@@ -22,7 +22,8 @@ const LandingPage = () => {
       h={isBigResolution == false && "85vh"}
       
     >
-      <Flex className="mob-scroll"  w={375} px={14} mb={48}  display={{xs:"flex",lg:"none"}} style={{overflow:"scroll"}} gap={24} >
+      {/* for mobiles */}
+      <Flex className="mob-scroll"  w={375} px={14} mb={48}  display={{xs:"flex",lg:"none"}} style={{overflow:"scroll"}} gap={14} >
         {weOffer.map((items) => {
           return (
             <Flex key={items.id} gap={16} component={Link} href={"/category"} 
@@ -35,9 +36,11 @@ const LandingPage = () => {
         })}
       </Flex>
       <Box>
-        <Image src="/images/hero.png" w={{xs:214,lg:320}} h={{xs:30,lg:54}} />
+        {/* <Image src="/images/hero.png" w={{xs:214,lg:320}} h={{xs:30,lg:54}} /> */}
+        <Image src="/images/hero.png" w={{xs:214,lg:415}} h={{xs:30,lg:70}} />
+
       </Box>
-      <Text c={"#303030"} fz={{xs:16,lg:20}} fw={{sm:500,lg:400} } mx={12} mt={20} ta={"center"}>
+      <Text c={"#303030"} fz={{xs:16,lg:20}} fw={{sm:500,lg:400} } mx={12} mt={22} ta={"center"}>
       Find the best prices on Smart Home products online with PricePilot
       </Text>
       <Flex ml={{md:32}}  w={{xs:340,lg:702}}>
@@ -52,7 +55,9 @@ const LandingPage = () => {
             border:"none"
           }}
           rightSection={
-            <Box bg={"#0034EC"} px={9} pb={4} pt={10} style={{borderRadius:"100%"}} >
+            
+            <Box bg={"#0034EC"} w={35} h={35} px={8} pt={8}  style={{borderRadius:"100%"}} >
+
                 <IconSearch size={18} color="#fff" />
             </Box>
           }

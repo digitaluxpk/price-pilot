@@ -371,17 +371,19 @@ function Navbar() {
           onClose={handleSearchBar.close}
           title={
             <TextInput
-              w={{ xs: 290, lg: 702 }}
+           
+          size="md"
+          
+          
+              w={{ xs: 300, lg: 702 }}
               h={"100%"}
-              p={12}
+              p={10}
               placeholder="Start searching for a product"
               radius={40}
               rightSection={
                 <Box
                   bg={"#0034EC"}
-                  px={8}
-                  pb={4}
-                  pt={8}
+                  w={35} h={35} px={8} pt={8}
                   style={{ borderRadius: "100%" }}
                 >
                   <IconSearch size={18} color="#fff" />

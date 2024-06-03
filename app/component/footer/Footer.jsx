@@ -12,7 +12,7 @@ const Footer = () => {
     <>
       {pathname == "/" ? (
         <Flex pos={isBigResolution == false ? "absolute":"static"} w={isBigResolution == false && "80%"}
-        bottom={isBigResolution == false && 0} justify={"center"} mb={30} ml={{ xs: 12, lg: 0 }} mt={isBigResolution && 104}>
+        bottom={isBigResolution == false && 0} justify={"center"} mb={30} ml={{ xs: 12, lg: 0 }} mt={{ xs: 16, lg: 104 }}>
           <Flex mt={12} fz={12} align={"center"} gap={16}>
             <Text fz={{ xs: 14, lg: 16 }} c={"#212427"}>
               &copy; 2024 PricePilot
@@ -33,8 +33,9 @@ const Footer = () => {
             display={{ xs: "none", lg: "flex" }}
             w={"100%"}
             direction={"column"}
-            px={{ xs: 16, md: 40 }}
-            py={{ xs: 40, md: 80 }}
+            px={{ xs: 16, md: 40 }}          
+            pt={{ xs: 40, md: 60 }}
+            pb={{ xs: 40, md: 30 }}
             style={{ overflow: "hidden" }}
           >
             <Divider size="xs" my={24} />
@@ -49,6 +50,7 @@ const Footer = () => {
             <Flex
               direction={{ xs: "column", md: "row" }}
               gap={{ xs: 24, lg: 110 }}
+              mb={{xs:8,lg:16}}
             >
               <Box w={{ xs: 300, md: 390 }}>
                 <Text mt={24} fz={14}>
@@ -123,7 +125,9 @@ const Footer = () => {
           {/* for mobile */}
           <Flex mt={140} display={{ xs: "flex", lg: "none" }} direction={"column"} ml={12}>
             <Flex direction={"column"} gap={{ xs: 24, lg: 110 }}>
+            
               <Box>
+              <Divider size="xs" my={24} />
                 <Text fw={600} mb="xs">
                   Shop for
                 </Text>

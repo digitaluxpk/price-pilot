@@ -7,7 +7,6 @@ import CategoryCard from "../component/category/CategoryCard";
 const Category = () => {
   return (
     <Flex direction={"column"} >
-    
       <Breadcrumb />
         <Text mt={34} fz={24} fw={600}>
           Smart Home
