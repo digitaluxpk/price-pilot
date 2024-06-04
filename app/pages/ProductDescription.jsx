@@ -13,7 +13,7 @@ import Specifications from '../component/productdescription/tabs/Specifications'
 const ProductDescription = () => {
   return (
     <Box style={{
-      overflow:"scroll",
+      overflow:"hidden",
       scrollBehavior: 'smooth '
     }}>
      
@@ -24,7 +24,7 @@ const ProductDescription = () => {
         <Overview />
         <Specifications />
         {/* <MostRelated /> */}
-        <CustomerViewed />
+        {/* <CustomerViewed /> */}
     </Box>
   )
 }

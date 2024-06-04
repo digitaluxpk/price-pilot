@@ -43,8 +43,8 @@ const Footer = () => {
               <Image
                 src="/images/footer-logo.png"
                 alt="PricePilot"
-                h={{ xs: 30, lg: 51 }}
-                w={{ xs: 214, md: 300 }}
+                h={{ xs: 30, lg: 32 }}
+                w={{ xs: 214, md: 192 }}
               />
             </Box>
             <Flex
@@ -169,8 +169,8 @@ const Footer = () => {
               <Image
                 src="/images/footer-logo.png"
                 alt="PricePilot"
-                h={{ xs: 30, lg: 51 }}
-                w={{ xs: 214, md: 300 }}
+                h={{ xs: 32, lg: 51 }}
+                w={{ xs: 192, md: 300 }}
               />
             </Box>
             <Box w={{ xs: 300, md: 390 }}>
