@@ -6,7 +6,7 @@ const page = () => {
   return (
     <>
       <BreadCrumb />
-      <Box mx={{ xs: 10, lg: 40 }} mt={50}>
+      <Box mx={{ xs: 10, lg: 40 }} mt={{xs:16,lg:50}}>
         <ProductDescription />
       </Box>
     </>

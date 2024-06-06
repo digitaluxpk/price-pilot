@@ -1,4 +1,4 @@
-import { Box,Space } from '@mantine/core'
+import { Box,Space ,Divider} from '@mantine/core'
 import React from 'react'
 import Hero from '../component/productdescription/Hero'
 import TabsSections from '../component/productdescription/tabs/TabsSections'
@@ -18,10 +18,14 @@ const ProductDescription = () => {
     }}>
      
         <Hero />
+        <Divider my="xl" size="sm" />
         <TabsSections />
         <Prices />
+        <Divider my="md" size="sm" />
         <Reviews />
+       
         <Overview />
+       
         <Specifications />
         {/* <MostRelated /> */}
         {/* <CustomerViewed /> */}

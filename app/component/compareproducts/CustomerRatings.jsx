@@ -111,28 +111,28 @@ const CustomerRatings = () => {
               <Box>{item.message}</Box>
               <Flex w={300} align={"center"} justify={"space-between"}>
                 <Text>5</Text>
-                <Image src={"/images/star.png"} />
+                <Image src={"/images/star.png"} alt="ratings " />
                 <Progress color="blue" w={250} value={item.fourStar} />
               </Flex>
               
               <Flex  w={300} align={"center"} justify={"space-between"}>
                 <Text>4</Text>
-                <Image src={"/images/star.png"} />
+                <Image src={"/images/star.png"} alt="ratings "  />
                 <Progress color="blue" w={250} value={item.fourStar} />
               </Flex>
               <Flex w={300} align={"center"} justify={"space-between"}>
                 <Text>3</Text>
-                <Image src={"/images/star.png"} />
+                <Image src={"/images/star.png"} alt="ratings "  />
                 <Progress color="blue" w={250} value={item.threeStar} />
               </Flex>
               <Flex w={300} align={"center"} justify={"space-between"}>
                 <Text>2</Text>
-                <Image src={"/images/star.png"} />
+                <Image src={"/images/star.png"} alt="ratings "  />
                 <Progress color="blue" w={250} value={item.twoStar} />
               </Flex>
               <Flex w={300} align={"center"} justify={"space-between"}>
                 <Text>1</Text>
-                <Image src={"/images/star.png"} />
+                <Image src={"/images/star.png"} alt="ratings "  />
                 <Progress  w={250} color="blue" value={item.oneStar} />
               </Flex>
             </Flex>

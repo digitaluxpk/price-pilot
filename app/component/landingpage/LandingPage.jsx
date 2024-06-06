@@ -37,7 +37,7 @@ const LandingPage = () => {
       </Flex>
       <Box>
         {/* <Image src="/images/hero.png" w={{xs:214,lg:320}} h={{xs:30,lg:54}} /> */}
-        <Image src="/images/hero.png" w={{xs:214,lg:415}} h={{xs:30,lg:70}} />
+        <Image src="/images/hero1.png" alt="logo"  w={{xs:214,lg:360}} h={{xs:30,lg:60}} />
 
       </Box>
       <Text c={"#303030"} fz={{xs:16,lg:20}} fw={{sm:500,lg:400} } mx={12} mt={22} ta={"center"}>
@@ -56,7 +56,7 @@ const LandingPage = () => {
           }}
           rightSection={
             
-            <Box bg={"#0034EC"} w={35} h={35} px={8} pt={8}  style={{borderRadius:"100%"}} >
+            <Box bg={"#0034EC"} w={35} h={35} px={8} pt={8} my={3}  style={{borderRadius:"100%"}} >
 
                 <IconSearch size={18} color="#fff" />
             </Box>

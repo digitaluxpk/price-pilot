@@ -11,9 +11,10 @@ const Footer = () => {
   return (
     <>
       {pathname == "/" ? (
-        <Flex pos={isBigResolution == false ? "absolute":"static"} w={isBigResolution == false && "80%"}
-        bottom={isBigResolution == false && 0} justify={"center"} mb={30} ml={{ xs: 12, lg: 0 }} mt={{ xs: 16, lg: 104 }}>
-          <Flex mt={12} fz={12} align={"center"} gap={16}>
+        <Flex  w={isBigResolution ? "94%" : "100%"}
+        // pos={isBigResolution == false ? "absolute":"static"}
+        bottom={isBigResolution == false && 0} justify={"center"} mb={30} ml={{ xs: 8, lg: "auto" }} mt={{ xs: 16, lg: 104 }}>
+          <Flex mt={12} fz={12} justify={"flex-start"} align={"center"} gap={16}>
             <Text fz={{ xs: 14, lg: 16 }} c={"#212427"}>
               &copy; 2024 PricePilot
             </Text>
@@ -22,7 +23,7 @@ const Footer = () => {
                 Privacy Policy
               </Text>
               <Text c={"#0034EC"} fz={{ xs: 12, lg: 14 }}>
-                Terms & Conditions
+              Terms & Conditions
               </Text>
             </Group>
           </Flex>

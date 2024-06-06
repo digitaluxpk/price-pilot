@@ -52,17 +52,17 @@ const Reviews = () => {
         <Flex gap={16} mt={24} direction={{xs:"column",lg:"row"}}>
             <Flex direction={"column"}>
                 <Flex gap={16}>
-                <Image w={16} h={16} src={"/images/star.png"} />
+                <Image w={16} h={16} src={"/images/star.png"} alt="rating" />
                     <Text fw={700}>4.0</Text>
                     <Text>reviews</Text>
                 </Flex>
                 <Flex gap={16}>
-                <Image w={16} h={16} src={"/images/star.png"} />
+                <Image w={16} h={16} src={"/images/star.png"} alt="rating" />
                     <Text fw={700}>4.0</Text>
                     <Text>reviews</Text>
                 </Flex>
                 <Flex gap={16}>
-                <Image w={16} h={16} src={"/images/star.png"} />
+                <Image w={16} h={16} src={"/images/star.png"} alt="rating" />
                     <Text fw={700}>4.0</Text>
                     <Text>reviews</Text>
                 </Flex>
@@ -74,28 +74,28 @@ const Reviews = () => {
         </Text></Box>
               <Flex w={300} align={"center"} justify={"space-between"}>
                 <Text>5</Text>
-                <Image src={"/images/star.png"} />
+                <Image src={"/images/star.png"} alt="rating" />
                 <Progress color="blue" w={250} value={1} />
               </Flex>
               
               <Flex  w={300} align={"center"} justify={"space-between"}>
                 <Text>4</Text>
-                <Image src={"/images/star.png"} />
+                <Image src={"/images/star.png"} alt="rating" />
                 <Progress color="blue" w={250} value={2} />
               </Flex>
               <Flex w={300} align={"center"} justify={"space-between"}>
                 <Text>3</Text>
-                <Image src={"/images/star.png"} />
+                <Image src={"/images/star.png"} alt="rating" />
                 <Progress color="blue" w={250} value={2} />
               </Flex>
               <Flex w={300} align={"center"} justify={"space-between"}>
                 <Text>2</Text>
-                <Image src={"/images/star.png"} />
+                <Image src={"/images/star.png"} alt="rating" />
                 <Progress color="blue" w={250} value={3} />
               </Flex>
               <Flex w={300} align={"center"} justify={"space-between"}>
                 <Text>1</Text>
-                <Image src={"/images/star.png"} />
+                <Image src={"/images/star.png"} alt="rating" />
                 <Progress  w={250} color="blue" value={5} />
               </Flex>
             </Flex>

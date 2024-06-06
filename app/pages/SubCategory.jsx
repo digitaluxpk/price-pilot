@@ -43,12 +43,13 @@ const SubCategory = () => {
         <Box w={"100%"}>
           <Flex
             pos={{xs:stickyFilter ? "fixed" : "static",lg:"static"}}
+           
             top={68}
             py={10}
             mb={26}
             left={5}
             style={{
-              zIndex:"10000",
+              zIndex:"100",   // reduced from 10000 to 100 so it can be hide from the sidebar drawer when opend
               boxShadow: "0px 2px 5px 0px rgba(29, 29, 29, 0.05)"
             }}
             px={14}

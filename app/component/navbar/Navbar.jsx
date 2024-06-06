@@ -82,7 +82,7 @@ function Navbar() {
         <Flex align={"center"}>
           {pathname !== "/" && (
             <Box component={Link} href={"/"}>
-              <Image src={"/images/logo.png"} w={192} h={32} />
+              <Image src={"/images/logo.png"} w={192} h={32} alt="logo"  />
             </Box>
           )}
           {pathname !== "/" && (
@@ -204,15 +204,17 @@ function Navbar() {
                   radius={40}
                   rightSection={
                     <Box
-                      bg={"#0034EC"}
-                      px={8}
-                      pb={3}
-                      pt={4}
+                      bg={"#0034EC"} w={33} h={33} px={8} pt={8} 
+                      
+                      my={3}
+                     
                       style={{ borderRadius: "100%" }}
                     >
-                      <IconSearch size={14} color="#fff" />
+                      <IconSearch size={18} color="#fff" />
                     </Box>
+
                   }
+                  rightSectionWidth={43}
                 />
               </Flex>
             </Flex>
@@ -243,6 +245,7 @@ function Navbar() {
             top: 0,
             paddingTop: 24,
             zIndex: 1000,
+           
             backgroundColor: "#FBFCFE",
             boxShadow: "0px 2px 5px 0px rgba(29, 29, 29, 0.05)",
           }}
@@ -263,7 +266,7 @@ function Navbar() {
           {pathname !== "/" && (
             <>
               <Box component={Link} href={"/"}>
-                <Image src={"/images/logo.png"} w={192} h={32} />
+                <Image src={"/images/logo.png"} w={192} h={32} alt="logo" />
               </Box>
               <Flex
                 onClick={handleSearchBar.open}
@@ -282,7 +285,7 @@ function Navbar() {
 
         <Drawer opened={opened} 
         title={
-          <Image src={"/images/mobile-submenu-logo.png"} />
+          <Image src={"/images/mobile-submenu-logo.png"} alt="sub menu-logo" />
         }
         onClose={close} padding="xl" size="md">
         {!submenu ? (

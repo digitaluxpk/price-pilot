@@ -9,12 +9,26 @@ import Specifications from "./Specifications";
 const TabsSections = () => {
   const tabSectionRef = useRef(null);
   const [stickyTab, setStickyTab] = useState(false);
+  const [stickyTabMob, setStickyTabMob] = useState(false);
+  // console.log("🚀 ~ TabsSections ~ stickyTabMob:", stickyTabMob);
+
   const headerHeight = 75; // Adjust this to match your header height
 
+
+
   const handleScroll = () => {
-    if (tabSectionRef.current) {
-      const offsetTop = tabSectionRef.current.getBoundingClientRect().top;
-      if (window.scrollY >= offsetTop) {
+    const isMobile = window.innerWidth <= 768;
+
+   
+    if (isMobile) {
+    
+      if (window.scrollY >= 870) {
+        setStickyTabMob(true);
+      } else {
+        setStickyTabMob(false);
+      }
+    } else {
+      if (window.scrollY >= 710) {
         setStickyTab(true);
       } else {
         setStickyTab(false);
@@ -46,33 +60,42 @@ const TabsSections = () => {
         zIndex: "100000",
         overflowX: "scroll",
         overflowY: "hidden",
+        transition: "height 0.3s ease",
       }}
       className="mob-scroll"
     >
       <Tabs
         h={{ xs: "100%", lg: stickyTab ? 0 : 60 }}
         display={{ xs: "block", lg: "none" }}
-        className="mob-scroll"
+        className="mob-scroll" variant="pills" radius="xs"
         style={{
           overflowX: "scroll",
           overflowY: "hidden",
+          border:'none',
+          outline:'none'
         }}
         defaultValue="prices"
         w={{ xs: 500, lg: "100%" }}
       >
         <Box className="mob-scroll">
           <Tabs.List
-            pos={stickyTab ? "fixed" : "static"}
-            top={65}
+            // pos={stickyTab ? "fixed" : "static"}
+            pos={stickyTabMob ? "fixed" : "static"}
+            // top={stickyTabMob ? 0 : undefined}
+            top={53}
             py={10}
             bg={"#fff"}
-            w={350}
-            h={60}
+            w={{xs:"100vw",lg:350}}
+            h={55}
             className="mob-scroll"
             style={{
               overflowX: "scroll",
               zIndex: "2000000",
               boxShadow: "0px 2px 5px 0px rgba(29, 29, 29, 0.05)",
+              transition: "top 0.3s ease, height 0.3s ease",
+              left: '8px', // Ensures the tabs list stays aligned to the left
+              right: 0,
+              
             }}
           >
             <Flex w={500}>
@@ -101,10 +124,10 @@ const TabsSections = () => {
         </Box>
       </Tabs>
 
-      <Tabs
+      <Tabs color="blue" 
         h={{ xs: "100%", lg: stickyTab ? 0 : 60 }}
         display={{ xs: "none", lg: "block" }}
-        className="mob-scroll"
+        className="mob-scroll" variant="pills" radius="xs"
         style={{
           overflowX: "scroll",
           overflowY: "hidden",
@@ -119,12 +142,15 @@ const TabsSections = () => {
             py={10}
             bg={"#fff"}
             w={"100%"}
-            h={60}
+            h={stickyTab?64:46}
             className="mob-scroll"
+            borderBottom={stickyTab?0:"2.7px solid #CFCFCF !important"}
             style={{
               overflowX: "scroll",
               zIndex: "2000000",
               boxShadow: "0px 2px 5px 0px rgba(29, 29, 29, 0.05)",
+              transition: "top 0.3s ease, height 0.3s ease",
+    borderBottom: "2.7px solid #CFCFCF !important"
             }}
           >
             <Flex w={500}>
@@ -170,3 +196,4 @@ const TabsSections = () => {
 };
 
 export default TabsSections;
+

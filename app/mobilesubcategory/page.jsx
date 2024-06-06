@@ -11,7 +11,7 @@ const MobileSubcategory = () => {
        <Breadcrumb />
         <Box component={Link} href={"/category/subcategory"} c={"#000"} style={{textDecoration:"none"}}  className="category">
           <Text mt={14} mb={17} fz={24} fw={600}>Smart Speakers & Displays</Text>
-            <Image src={"/images/category.png"} />
+            <Image src={"/images/category.png"} alt="category" />
           <Flex direction={"column"} mt={12} gap={12}>
             {mobileSubCategoryList.map(item => (
               <Text key={item.id}>{item.name}</Text>
