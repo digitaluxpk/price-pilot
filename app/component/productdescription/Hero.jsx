@@ -52,7 +52,7 @@ const Hero = () => {
 
   return (
     <Flex w={"100%"}>
-      <Flex direction={{ xs: "column", lg: "row" }} gap={24}>
+      <Flex direction={{ xs: "column", lg: "row" }} gap={4}>
         <Box>
           <Text display={{ xs: "block", md: "none" }} mb={20} fz={16} fw={700}>
             {product.name}

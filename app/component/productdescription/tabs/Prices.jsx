@@ -42,14 +42,15 @@ const Prices = () => {
     const [opened, setOpened] = useState(false);
     const [sortOption, setSortOption] = useState("Lowest Price");
   const rows = elements.map((element) => (
-    
-    <Table.Tr bg={"#FAFBFD"} key={element.name} h={134}  m={32} margin className="spacing" >
-      <Table.Td>{element.position}</Table.Td>
-      <Table.Td>{element.mass}</Table.Td>
-      <Table.Td>{element.symbol}</Table.Td>
+
+    <Table.Tr bg={"#FAFBFD"}  key={element.name} h={150} w={"100%"}  >
+      <Table.Td miw={"200px"}>{element.position}</Table.Td>
+      <Table.Td miw={"200px"}>{element.mass}</Table.Td>
+      <Table.Td miw={"300px"}>{element.symbol}</Table.Td>
       {/* <Table.Td>{element.name}</Table.Td> */}
-      <Table.Td>{element.btn}</Table.Td>
+      <Table.Td miw={"200px"}>{element.btn}</Table.Td>
     </Table.Tr>
+   
   ));
   return (
     <Box id="price" 
@@ -111,8 +112,9 @@ const Prices = () => {
               </Popover.Dropdown>
             </Popover>
         </Flex>
-      <Table withRowBorders={false} cellSpacing={16} verticalSpacing={12} >
-        <Table.Thead>
+      <Table withRowBorders={false} cellSpacing={16} verticalSpacing={12} styles={{table:{borderCollapse: "separate",
+    borderSpacing: "0px 15px"}}}  >
+        <Table.Thead miw={"160px"}>
           <Table.Tr>
             <Table.Th>Sold by</Table.Th>
             <Table.Th>Price</Table.Th>
@@ -123,7 +125,13 @@ const Prices = () => {
         </Table.Thead>
         <Table.Tbody  >{rows}</Table.Tbody>
       </Table>
+
+<Text fz={16} c={"#626262"}  mt="md">PricePilot is continuing to grow the number of retailers whose prices we show. There may be lower prices available at stores not listed here.</Text>
+<Text fz={16} c={"#626262"} mt="sm"> Final price and availability are determined by each retailer on their website.</Text>
     </Box>
+
+
+   
   );
 };
 
