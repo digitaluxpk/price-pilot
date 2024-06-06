@@ -13,7 +13,7 @@ const CategoryCard = () => {
         c={"#000"}
         style={{textDecoration:"none"}}
         key={category.id} className="category">
-            <Image src={"/images/category.png"} />
+            <Image src={"/images/category.png"} alt="category" />
           <Text my={18} fz={18} fw={700}>{category.title}</Text>
           <Flex direction={"column"} gap={18}>
             {category.items.map(item => (

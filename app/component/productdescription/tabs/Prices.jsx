@@ -4,7 +4,7 @@ import { IconChevronDown } from "@tabler/icons-react";
 import React, { useState } from "react";
 const elements = [
   {
-    position: <Image src={"/images/category.png"} w={117} h={68} />,
+    position: <Image src={"/images/category.png"} w={117} h={68} alt="products image" />,
     mass: (
       <Text fz={32} fw={500}>
         123
@@ -21,7 +21,7 @@ const elements = [
   variant="transparent" >Buy on Best Buy</Button>
   },
   {
-    position: <Image src={"/images/category.png"} w={117} h={68} />,
+    position: <Image src={"/images/category.png"} w={117} h={68} alt="category product images" />,
     mass: (
       <Text fz={32} fw={500}>
         123

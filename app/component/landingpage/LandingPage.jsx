@@ -37,7 +37,7 @@ const LandingPage = () => {
       </Flex>
       <Box>
         {/* <Image src="/images/hero.png" w={{xs:214,lg:320}} h={{xs:30,lg:54}} /> */}
-        <Image src="/images/hero1.png" w={{xs:214,lg:360}} h={{xs:30,lg:60}} />
+        <Image src="/images/hero1.png" alt="logo"  w={{xs:214,lg:360}} h={{xs:30,lg:60}} />
 
       </Box>
       <Text c={"#303030"} fz={{xs:16,lg:20}} fw={{sm:500,lg:400} } mx={12} mt={22} ta={"center"}>

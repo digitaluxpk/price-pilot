@@ -81,7 +81,7 @@ const TabsSections = () => {
           <Tabs.List
             // pos={stickyTab ? "fixed" : "static"}
             pos={stickyTabMob ? "fixed" : "static"}
-            top={stickyTabMob ? 0 : undefined}
+            // top={stickyTabMob ? 0 : undefined}
             top={53}
             py={10}
             bg={"#fff"}

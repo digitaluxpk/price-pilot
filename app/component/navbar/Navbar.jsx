@@ -82,7 +82,7 @@ function Navbar() {
         <Flex align={"center"}>
           {pathname !== "/" && (
             <Box component={Link} href={"/"}>
-              <Image src={"/images/logo.png"} w={192} h={32} />
+              <Image src={"/images/logo.png"} w={192} h={32} alt="logo"  />
             </Box>
           )}
           {pathname !== "/" && (
@@ -266,7 +266,7 @@ function Navbar() {
           {pathname !== "/" && (
             <>
               <Box component={Link} href={"/"}>
-                <Image src={"/images/logo.png"} w={192} h={32} />
+                <Image src={"/images/logo.png"} w={192} h={32} alt="logo" />
               </Box>
               <Flex
                 onClick={handleSearchBar.open}
@@ -285,7 +285,7 @@ function Navbar() {
 
         <Drawer opened={opened} 
         title={
-          <Image src={"/images/mobile-submenu-logo.png"} />
+          <Image src={"/images/mobile-submenu-logo.png"} alt="sub menu-logo" />
         }
         onClose={close} padding="xl" size="md">
         {!submenu ? (
