@@ -244,7 +244,7 @@ function Navbar() {
             width: "100%",
             top: 0,
             paddingTop: 24,
-            zIndex: 1000,
+            zIndex: 10,
            
             backgroundColor: "#FBFCFE",
             boxShadow: "0px 2px 5px 0px rgba(29, 29, 29, 0.05)",
