@@ -9,7 +9,6 @@ export default function Breadcrumb() {
   const paths = usePathname();
   const [isMobile, setIsMobile] = useState(false);
   var moveBreadcrumb;
-
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 500);
@@ -25,7 +24,6 @@ export default function Breadcrumb() {
   const pathNames = ["Home", ...paths.split("/").filter((path) => path)];
   const items = pathNames.map((item, index) => {
     const itemName = item.charAt(0).toUpperCase() + item.slice(1);
-    
     const textStyle =
       index === pathNames.length - 1
         ? { color: "blue", textDecoration: "none" }
@@ -48,16 +46,15 @@ export default function Breadcrumb() {
     <>
       <Breadcrumbs
         separator={<IconChevronRight size={16} />}
-        separatorMargin={{ xs: "sm", lg: "md" }}
+        separatorMargin={{ xs: "sm", lg: "md" }} 
         mt="xs"
         mx={{ xs: "md", lg: "" }}
-        className="mob-scroll"
         style={{
           display: "flex",
           overflowX: isMobile ? "auto" : "hidden",
           whiteSpace: isMobile ? "nowrap" : "normal",
-          padding: isMobile ? "0 10px 12px 0" : "0",
-          marginLeft: moveBreadcrumb ? "-60px" : "0",
+          // padding: isMobile ? "0 10px 12px 0" : "0",
+          marginLeft: (moveBreadcrumb && isMobile)? "-60px" : "10px",
         }}
       >
         {items}
@@ -65,3 +62,4 @@ export default function Breadcrumb() {
     </>
   );
 }
+

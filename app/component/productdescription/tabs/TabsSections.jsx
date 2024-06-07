@@ -79,18 +79,20 @@ const TabsSections = () => {
       >
         <Box className="mob-scroll">
           <Tabs.List
-            // pos={stickyTab ? "fixed" : "static"}
+           
             pos={stickyTabMob ? "fixed" : "static"}
-            // top={stickyTabMob ? 0 : undefined}
-            top={53}
-            py={10}
+           
+            top={60}
+            // py={10}
+            pt={2}
             bg={"#fff"}
             w={{xs:"100vw",lg:350}}
-            h={55}
+            // h={55}
+            h={42}
             className="mob-scroll"
             style={{
               overflowX: "scroll",
-              zIndex: "2000000",
+              zIndex: "200",
               boxShadow: "0px 2px 5px 0px rgba(29, 29, 29, 0.05)",
               transition: "top 0.3s ease, height 0.3s ease",
               left: '8px', // Ensures the tabs list stays aligned to the left
@@ -139,10 +141,11 @@ const TabsSections = () => {
           <Tabs.List
             pos={stickyTab ? "fixed" : "static"}
             top={0}
-            py={10}
+            // py={10}
             bg={"#fff"}
             w={"100%"}
-            h={stickyTab?64:46}
+            // h={stickyTab?64:46}
+              h={stickyTab?50:46}
             className="mob-scroll"
             borderBottom={stickyTab?0:"2.7px solid #CFCFCF !important"}
             style={{
